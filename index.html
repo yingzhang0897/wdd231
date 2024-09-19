@@ -3,38 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WDD 231 - Ying Zhang - week1 assignment</title>
+    <meta name="description" content="about me, my country and my first certificate">
+    <meta name="author" content="Ying Zhang">
+    <title>wdd231-week1-assignment</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/layout.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/base.css">
+
     <script src="scripts/lastmodified.js" defer></script>
 </head>
 <body>
     <div id="content">
         <header>
             <h1>Ying Zhang</h1>
+            <img src="images/selfie.png" alt="my selfie" width=150px loading="lazy">
         </header>
         <nav>
-            <a  title="home">Home</a>
-            <a  title="projects">Chamber</a>
-            <a  title="services">GitHub Profile</a>
-            <a  title="contact us">LinkedIn</a>
+            <a id="menu" href="#"></a>
+            <ul class="navigation">
+                <li><a  title="#" href="index.html" class="active">Home</a></li>
+                <li><a  title="chamber of commerce" href="#">Chamber</a></li>
+                <li><a  title="Github" href="https://github.com/yingzhang0897">GitHub Profile</a></li>
+                <li> <a  title="LinkedIn" href="https://www.linkedin.com/">LinkedIn</a></li>
+            </ul>
         </nav>
         <main>
-            <section class="aside-content">
-                <h2>Course work</h2> 
+            <section  class="grid-container">
+                <div>
+                    <h2>About me</h2> 
+                    <ol>
+                        <li>work as an Au Pair</li>
+                        <li>hobbies
+                            <ul>
+                                <li>piano</li>
+                                <li>excercise</li>
+                            </ul>
+                        </li>
+                        <li>achievements and kids give me joy</li>
+                    </ol>
+                </div>
+                <div>
+                    <h2>Hu Nan, China</h2>
+                    <img src="images/map.webp" alt="map of Hu Nan in China" width="200px" loading="lazy">
+                </div>
             </section>
-            <section class="aside-content">
-                <h2>Hu Nan, China</h2>
-            </section>
-            <section class="main-content">
+            <section class="certificate">
                 <h2>Web and Computer Programming Certificate</h2>
+                <div class="buttons">
+                    <button onclick="filterCourses('ALL')">ALL</button>
+                    <button onclick="filterCourses('WDD')">WDD</button>
+                    <button onclick="filterCourses('CSE')">CSE</button>
+                </div>
+                
+                <div class="container" id="course-container"></div>
+                
+                <div class="credits">
+                    Total Credits: <span id="total-credits">0</span>
+                </div>
             </section>
         </main>   
-        <footer class="home-footer">
-            <p>&copy;<span id="currentYear"></span> Ying Zhang, China </p>
-            <p id="lastModified">Last modified: </p>
+        <footer>
+                <p>&copy;<span id="currentYear"></span> Ying Zhang, China </p>
+                <p id="lastModified">Last modified: </p>
         </footer>
     </div>
 </body>
