@@ -6,7 +6,6 @@
 
 body {
   font-family: "Playfair Display", serif;
-  font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
 }
@@ -86,7 +85,7 @@ section div {
 section h2 {
 	font-size: 2rem;
     font-style: italic;
-    margin: 1 rem;
+    margin: 1rem;
 }
 
 .container {
