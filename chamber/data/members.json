@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Business One",
+        "address": "123 Main St, Portland, OR",
+        "phone": "(555) 123-4567",
+        "website": "https://www.businessone.com",
+        "image": "business1.jpg",
+        "membershipLevel": 1
+    },
+    {
+        "name": "Business Two",
+        "address": "456 Second St, Portland, OR",
+        "phone": "(555) 234-5678",
+        "website": "https://www.businesstwo.com",
+        "image": "business2.jpg",
+        "membershipLevel": 2
+    },
+    {
+        "name": "Business Three",
+        "address": "789 Third St, Portland, OR",
+        "phone": "(555) 345-6789",
+        "website": "https://www.businessthree.com",
+        "image": "business3.jpg",
+        "membershipLevel": 3
+    }
+]

@@ -1,0 +1,92 @@
+/* Define global color variables */
+:root {
+    --primary-color: #0077cc;  /* Blue */
+    --secondary-color: #ff6600;  /* Orange */
+    --background-color: #f4f4f4;  /* Light gray */
+    --text-color: #333;  /* Dark gray */
+}
+
+/* Normalize and global styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+.directory {
+    padding: 20px;
+    background-color: white;
+}
+
+/* Grid and List View Toggle */
+.grid-view {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.list-view {
+    display: block;
+}
+
+.business-card {
+    border: 1px solid var(--text-color);
+    padding: 15px;
+    background-color: var(--background-color);
+}
+
+.business-card h3 {
+    color: var(--primary-color);
+}
+
+.business-card a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.business-card a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background-color: var(--text-color);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+}
