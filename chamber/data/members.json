@@ -1,26 +1,74 @@
 [
     {
-        "name": "Business One",
-        "address": "123 Main St, Portland, OR",
-        "phone": "(555) 123-4567",
-        "website": "https://www.businessone.com",
+        "name": "Nike",
+        "address": "One Bowerman Dr, Beaverton, OR 97005",
+        "phone": "(503) 671-6453",
+        "website": "https://about.nike.com/en/company",
         "image": "business1.jpg",
-        "membershipLevel": 1
+        "membershipLevel": "gold"
     },
     {
-        "name": "Business Two",
-        "address": "456 Second St, Portland, OR",
-        "phone": "(555) 234-5678",
-        "website": "https://www.businesstwo.com",
+        "name": "Columbia Sportswear",
+        "address": "14375 NW Science Park Dr, Portland, OR 97229",
+        "phone": "(503) 985-4000",
+        "website": "https://www.columbia.com/stores",
         "image": "business2.jpg",
-        "membershipLevel": 2
+        "membershipLevel": "gold"
     },
     {
-        "name": "Business Three",
-        "address": "789 Third St, Portland, OR",
-        "phone": "(555) 345-6789",
-        "website": "https://www.businessthree.com",
+        "name": "Cambia Health Solutions",
+        "address": "200 SW Market St, Portland, OR 97201",
+        "phone": "((503) 721-4020",
+        "website": "https://www.cambiahealth.com/",
         "image": "business3.jpg",
-        "membershipLevel": 3
+        "membershipLevel": "gold"
+    },
+    {
+        "name": "Qorvo",
+        "address": "2300 NE Brookwood Pkwy, Hillsboro, OR 97124",
+        "phone": "((503) 615-9000",
+        "website": "https://www.qorvo.com/",
+        "image": "business3.jpg",
+        "membershipLevel": "silver"
+    },
+    {
+        "name": "Tektronix",
+        "address": "14150 SW Karl Braun Dr, Beaverton, OR 97007",
+        "phone": "(800) 833-9200",
+        "website": "https://www.tek.com/en",
+        "image": "business3.jpg",
+        "membershipLevel": "silver"
+    },
+    {
+        "name": "Adidas North America",
+        "address": "5077 N Greeley Ave, Portland, OR 97217",
+        "phone": "(800) 982-9337",
+        "website": "https://www.adidas.com/us/stores",
+        "image": "business3.jpg",
+        "membershipLevel": "gold"
+    },
+    {
+        "name": "Teledyne FLIR",
+        "address": "27700 SW Parkway Ave, Wilsonville, OR 97070",
+        "phone": "(503) 498-3547",
+        "website": "https://www.flir.com/store/",
+        "image": "business3.jpg",
+        "membershipLevel": "silver"
+    },
+    {
+        "name": "Wieden + Kennedy",
+        "address": "224 NW 13th Ave, Portland, OR 97209",
+        "phone": "(971) 379-5749",
+        "website": "https://www.wk.com/",
+        "image": "business3.jpg",
+        "membershipLevel": "member"
+    },
+    {
+        "name": "Total Quality Logistics",
+        "address": "13333 SW 68th Pkwy STE 220, Tigard, OR 97223",
+        "phone": "(800) 580-3101",
+        "website": "https://www.tql.com/",
+        "image": "business3.jpg",
+        "membershipLevel": "silver"
     }
 ]

@@ -1,31 +1,3 @@
-// Mock events data
-const events = [
-    { name: "Business Networking", date: "Sept 30" },
-    { name: "Chamber Luncheon", date: "Oct 5" },
-];
-
-const eventSection = document.getElementById("events");
-
-events.forEach(event => {
-    const eventElement = document.createElement('div');
-    eventElement.innerHTML = `<h3>${event.name}</h3><p>${event.date}</p>`;
-    eventSection.appendChild(eventElement);
-});
-
-// Weather Data (Mock)
-const weatherData = {
-    temperature: 75,
-    condition: "Sunny"
-};
-
-const weatherSection = document.getElementById("weather");
-weatherSection.innerHTML = `<p>${weatherData.temperature}°F - ${weatherData.condition}</p>`;
-
-// Keynote Tickets Button
-function buyTickets() {
-    alert('Redirecting to the ticket purchase page...');
-}
-
 // Fetch member data and display it on the page
 async function fetchMembers() {
     const response = await fetch('data/members.json');
@@ -61,9 +33,6 @@ document.getElementById('listView').addEventListener('click', () => {
     document.getElementById('directory-container').classList.add('list-view');
 });
 
-// Set current year and last modified date in the footer
-document.getElementById('currentYear').textContent = new Date().getFullYear();
-document.getElementById('lastModified').textContent = document.lastModified;
 
 // Call the function to fetch and display members
 fetchMembers();
