@@ -1,7 +1,7 @@
 /* Define global color variables */
 :root {
-    --background-color: #43BDE5;
-    --primary-color: white; 
+    --background-color: white;
+    --primary-color: #43BDE5; 
     --text-color: black;
 }
 
@@ -22,7 +22,7 @@ header  {
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: italic;
-    background-color: var(--background-color);
+    background-color: var(--primary-color);
     color: var(--text-color);
     padding: 20px;
     text-align: center;
@@ -100,7 +100,7 @@ header h1, h2 {
 }
 
 .navigation a:hover, navigation a:active {
-	background-color: var(--primary-color);
+	background-color: var(--background-color);
 }
 
 .show li {
@@ -117,13 +117,14 @@ main {
 
 .directory {
     padding: 20px;
-    background-color: var(--primary-color);
+    background-color: var(--background-color);
 }
 button {
     margin-bottom: 1rem;
     padding: 10px;
     font-size: large;
     font-style: italic;
+    background-color: var(--primary-color);
 }
 
 /* Grid and List View Toggle */
@@ -140,7 +141,7 @@ button {
 .business-card {
     border: 1px solid var(--text-color);
     padding: 15px;
-    background-color: var(--background-color);
+    background-color: var(--primary-color);
 }
 
 .business-card h3 {
@@ -157,7 +158,7 @@ button {
 }
 
 footer {
-    background-color: var(--background-color);
+    background-color: var(--primary-color);
     color: var(--text-color);
     padding: 20px;
     text-align: center;
