@@ -1,7 +1,7 @@
 /* Define global color variables */
 :root {
     --background-color: #43BDE5;
-    --primary-color: #ECECB1; 
+    --primary-color: white; 
     --text-color: black;
 }
 
@@ -129,7 +129,7 @@ button {
 /* Grid and List View Toggle */
 .grid-view {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
     gap: 20px;
 }
 

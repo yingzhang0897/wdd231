@@ -4,7 +4,7 @@
         "address": "One Bowerman Dr, Beaverton, OR 97005",
         "phone": "(503) 671-6453",
         "website": "https://about.nike.com/en/company",
-        "image": "business1.jpg",
+        "image": "images/nike.webp",
         "membershipLevel": "gold"
     },
     {
@@ -12,7 +12,7 @@
         "address": "14375 NW Science Park Dr, Portland, OR 97229",
         "phone": "(503) 985-4000",
         "website": "https://www.columbia.com/stores",
-        "image": "business2.jpg",
+        "image": "images/ColumbiaSportwear.webp",
         "membershipLevel": "gold"
     },
     {
@@ -20,7 +20,7 @@
         "address": "200 SW Market St, Portland, OR 97201",
         "phone": "((503) 721-4020",
         "website": "https://www.cambiahealth.com/",
-        "image": "business3.jpg",
+        "image": "images/Cambia.webp",
         "membershipLevel": "gold"
     },
     {
@@ -28,7 +28,7 @@
         "address": "2300 NE Brookwood Pkwy, Hillsboro, OR 97124",
         "phone": "((503) 615-9000",
         "website": "https://www.qorvo.com/",
-        "image": "business3.jpg",
+        "image": "images/Qorvo.webp",
         "membershipLevel": "silver"
     },
     {
@@ -36,7 +36,7 @@
         "address": "14150 SW Karl Braun Dr, Beaverton, OR 97007",
         "phone": "(800) 833-9200",
         "website": "https://www.tek.com/en",
-        "image": "business3.jpg",
+        "image": "images/Tektronix.webp",
         "membershipLevel": "silver"
     },
     {
@@ -44,7 +44,7 @@
         "address": "5077 N Greeley Ave, Portland, OR 97217",
         "phone": "(800) 982-9337",
         "website": "https://www.adidas.com/us/stores",
-        "image": "business3.jpg",
+        "image": "images/Adidas.webp",
         "membershipLevel": "gold"
     },
     {
@@ -52,7 +52,7 @@
         "address": "27700 SW Parkway Ave, Wilsonville, OR 97070",
         "phone": "(503) 498-3547",
         "website": "https://www.flir.com/store/",
-        "image": "business3.jpg",
+        "image": "images/teledyneFLIR.webp",
         "membershipLevel": "silver"
     },
     {
@@ -60,7 +60,7 @@
         "address": "224 NW 13th Ave, Portland, OR 97209",
         "phone": "(971) 379-5749",
         "website": "https://www.wk.com/",
-        "image": "business3.jpg",
+        "image": "images/WiedenKennedy.webp",
         "membershipLevel": "member"
     },
     {
@@ -68,7 +68,7 @@
         "address": "13333 SW 68th Pkwy STE 220, Tigard, OR 97223",
         "phone": "(800) 580-3101",
         "website": "https://www.tql.com/",
-        "image": "business3.jpg",
+        "image": "images/totalquality.webp",
         "membershipLevel": "silver"
     }
 ]

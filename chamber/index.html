@@ -16,10 +16,10 @@
 <body>
     <header>
         <div class="logo">
-            <img src="logo.png" alt="Portland Chamber of Commerce Logo">
+            <img src="images/icon.webp" alt="Portland Chamber of Commerce Logo" width="100" loading="lazy">
         </div>
-        <nav>
-            <ul>
+            <a id="menu" href="#"></a>
+            <ul class="navigation">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="discover.html">Discover</a></li>
                 <li><a href="directory.html">Directory</a></li>
@@ -35,7 +35,8 @@
         <section class="hero">
             <h1>Welcome to the Portland Chamber of Commerce</h1>
             <p>Fostering local economic growth and community connections.</p>
-            <button onclick="buyTickets()">Buy Keynote Tickets</button>
+            <img src="images/portland.webp" alt="portland downtown" width="800" loading="lazy">
+            <button onclick="buyTickets()">Join Us</button>
         </section>
 
         <section class="community-info">
@@ -43,9 +44,14 @@
             <div id="events"></div>
         </section>
 
-        <section class="weather">
+        <section class="current">
             <h2>Current Weather</h2>
-            <div id="weather"></div>
+            <div id="currentCard"></div>
+        </section>
+        
+        <section class="forecast">
+            <h2>Weather Forecast</h2>
+            <div id="forecastCard"></div>
         </section>
 
         <section class="business-spotlight">

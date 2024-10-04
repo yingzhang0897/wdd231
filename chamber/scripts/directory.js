@@ -15,9 +15,8 @@ async function fetchMembers() {
             <p>${member.address}</p>
             <p>Phone: ${member.phone}</p>
             <p>Website: <a href="${member.website}">${member.website}</a></p>
-            <img src="${member.image}" alt="${member.name} logo">
+            <img src="${member.image}" alt="${member.name} logo" width="200">
         `;
-
         directoryContainer.appendChild(memberCard);
     });
 }
