@@ -25,39 +25,36 @@ header  {
     padding: 20px;
     text-align: center;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: 1fr auto 1fr auto;
+    align-items: center;
 }
 
 .logo {
     grid-column: 1; 
-    grid-row: 1;
+    justify-self: start;
 }
 
 .header-title {
     grid-column: 2; 
-    grid-row: 1; 
     text-align: center;
+    justify-self: center;
 }
 
 .facebook{
     grid-column: 3;
-    grid-row: 1; 
-    text-align: right;
+   justify-self: end;
 }
 #menu {
 	display: block;
     grid-column: 4;
+    justify-self: end;
 	font-size: 2rem;
 	font-weight:400;
 	text-decoration: none;
 	background-color: var(--primary-color);
 	color: var(--text-color);
 }
-nav {
-    grid-column: 1 / 4; 
-    grid-row: 2; 
-    background-color: var(--primary-color);
-}
+
 .header-today {
     grid-row: 3;
     text-align: center;
@@ -101,6 +98,8 @@ header h1, h2 {
 
 .show li {
 	display: block;
+    grid-column: 1 / 4; 
+    text-align: center; 
 }
 
 #menu.show::before {
@@ -295,10 +294,11 @@ footer {
 @media only screen and (min-width: 40em) {
 	.navigation {
 		display: flex;
+        background-color: var(--primary-color);
 	}
 	.navigation li {
 		display: block; /* change state in small view */
-		flex: 1 1 100%;
+        flex: 1 1 100%;
 	}
 	.navigation a {
 		text-align: center;
