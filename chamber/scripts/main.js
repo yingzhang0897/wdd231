@@ -40,14 +40,18 @@ async function fetchWeatherData() {
 
         // Construct the weather card HTML
         const weatherHtml = `
-            <img src="https://openweathermap.org/img/wn/${icon}.png" alt="Weather icon">
-            <p>Temperature: ${temp} °F</p>
-            <p>Description: ${description}</p>
-            <p>High: ${tempHigh} °F</p>
-            <p>Low: ${tempLow} °F</p>
-            <p>Humidity: ${humidity}%</p>
-            <p>Sunrise: ${sunrise}</p>
-            <p>Sunset: ${sunset}</p>
+            <div class="weather-icon">
+                <img src="https://openweathermap.org/img/wn/${icon}@2x.png" alt="Weather icon">
+            </div>       
+            <div class="weather-info">     
+                <p>Temperature: ${temp} °F</p>
+                <p>Description: ${description}</p>
+                <p>High: ${tempHigh} °F</p>
+                <p>Low: ${tempLow} °F</p>
+                <p>Humidity: ${humidity}%</p>
+                <p>Sunrise: ${sunrise}</p>
+                <p>Sunset: ${sunset}</p>
+            </div>
         `;
 
         // Insert the weather card into the div with id "currentCard"
@@ -62,51 +66,124 @@ async function fetchWeatherData() {
 fetchWeatherData();
 
 //weather forecast
-const forecastUrl = 'https://api.openweathermap.org/data/2.5/forecast?lat=49.52&lon=-122.69&appid=f098769938b919132231d5a3587a6cbb&units=imperial';
+const apiUrl = "https://api.openweathermap.org/data/2.5/forecast?lat=49.52&lon=-122.69&appid=f098769938b919132231d5a3587a6cbb&units=imperial";
 
-// Function to fetch and display forecast data
-async function fetchForecastData() {
-    try {
-        const response = await fetch(forecastUrl);
-        const data = await response.json();
+async function displayWeatherForecast() {
+  try {
+    // Fetch data from the API
+    const response = await fetch(apiUrl);
+    const data = await response.json();
 
-        // Get today's date
-        const today = new Date();
-        const dailyTemps = {};
+    // Extract the forecast list from the response
+    const forecastList = data.list;
 
-        // Loop through forecast data and store temperatures
-        data.list.forEach(item => {
-        const date = item.dt_txt.split(' ')[0]; // Extract the date (YYYY-MM-DD)
-        const temp = item.main.temp;
+    // Get today's date
+    const currentDate = new Date().toISOString().split('T')[0];
 
-        // Initialize or add temperature for the date
-        if (!dailyTemps[date]) {
-            dailyTemps[date] = [];
+    // Initialize an empty object to store daily temperatures
+    const dailyTemperatures = {};
+
+    // Iterate over the forecast data
+    forecastList.forEach(forecast => {
+      // Extract the date and temperature
+      const forecastTime = new Date(forecast.dt * 1000);
+      const forecastDate = forecastTime.toISOString().split('T')[0];
+      const temperature = forecast.main.temp;
+
+      // Collect data only for the next three days (excluding today)
+      if (forecastDate >= currentDate) {
+        if (!dailyTemperatures[forecastDate]) {
+          dailyTemperatures[forecastDate] = [];
         }
-        dailyTemps[date].push(temp);
-        });
+        dailyTemperatures[forecastDate].push(temperature);
+      }
+    });
 
-        // Get the next three days
-        const dates = Object.keys(dailyTemps).filter(date => new Date(date) > today).slice(0, 3);
-        const dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    // Stop if we have data for the next three days
+    const dates = Object.keys(dailyTemperatures).slice(0, 3);
 
-        // Prepare forecast HTML
-        let forecastHTML = '';
+    // Get the forecastCard element to display the data
+    const forecastCard = document.getElementById('forecastCard');
+    forecastCard.innerHTML = '';
 
-        dates.forEach((date, index) => {
-        const avgTemp = (dailyTemps[date].reduce((sum, temp) => sum + temp, 0) / dailyTemps[date].length).toFixed(1);
-        const dayName = index === 0 ? 'Tomorrow' : dayNames[new Date(date).getDay()];
-        forecastHTML += `<p><strong>${dayName}:</strong> ${avgTemp}°F</p>`;
-        });
+    // Create a list to display daily average temperatures
+    const ul = document.createElement('ul');
 
-        // Update the forecastCard div with the forecast data
-        document.getElementById('forecastCard').innerHTML = forecastHTML;
+    dates.forEach(date => {
+      const temperatures = dailyTemperatures[date];
+      const averageTemp = temperatures.reduce((sum, temp) => sum + temp, 0) / temperatures.length;
 
-    } catch (error) {
-            console.error("Error fetching forecast data:", error);
-    }
+      // Create a list item for each day
+      const li = document.createElement('li');
+      li.textContent = `${date}: ${averageTemp.toFixed(2)}°F`;
+
+      // Append the list item to the list
+      ul.appendChild(li);
+    });
+
+    // Append the list to the forecastCard div
+    forecastCard.appendChild(ul);
+
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    const forecastCard = document.getElementById('forecastCard');
+    forecastCard.innerHTML = '<p>Unable to load weather data at the moment. Please try again later.</p>';
+  }
 }
-fetchForecastData();
+
+// Call the function to display the weather forecast
+displayWeatherForecast();
+
+    
+//randomly display three gold or silver level members cards
+async function fetchSpotlightMembers() {
+    const response = await fetch('data/members.json');
+    const members = await response.json();
+
+    // Filter members with gold or silver membership level
+    const qualifiedMembers = members.filter(member =>
+        member.membershipLevel === 'gold' || member.membershipLevel === 'silver'
+    );
+
+    // Shuffle and select three members randomly
+    const selectedMembers = shuffleArray(qualifiedMembers).slice(0, 3);
+
+    // Display the selected members in the spotlight section
+    const spotlightContainer = document.getElementById('spotlight');
+    spotlightContainer.innerHTML = ''; 
+
+    selectedMembers.forEach(member => {
+        const memberCard = document.createElement('div');
+        memberCard.classList.add('spotlight-card');
+
+        memberCard.innerHTML = `
+        <h3>${member.name}</h3>  
+        <div class="spotlight-logo">
+            <img src="${member.image}" alt="${member.name} logo">
+        </div>
+        <div class="spotlight-info">
+            <p>Phone: ${member.phone}</p>
+            <p>Address: ${member.address}</p>
+            <p>Website: <a href="${member.website}" target="_blank">${member.website}</a></p>
+            <p>Membership Level: ${member.membershipLevel}</p>
+        </div>
+        `;
+        spotlightContainer.appendChild(memberCard);
+    });
+}
+
+// Utility function to shuffle an array
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
+// Run the function to load the spotlight members when the page loads
+document.addEventListener('DOMContentLoaded', fetchSpotlightMembers);
+
 
 
 

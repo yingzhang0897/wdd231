@@ -41,12 +41,20 @@ header  {
     text-align: center;
 }
 
-.social-media {
+.facebook{
     grid-column: 3;
     grid-row: 1; 
     text-align: right;
 }
-
+#menu {
+	display: block;
+    grid-column: 4;
+	font-size: 2rem;
+	font-weight:400;
+	text-decoration: none;
+	background-color: var(--primary-color);
+	color: var(--text-color);
+}
 nav {
     grid-column: 1 / 4; 
     grid-row: 2; 
@@ -63,15 +71,6 @@ header h1, h2 {
     font-weight: 700;
     font-style: normal; 
     font-size: 2rem;
-}
-
-#menu {
-	display: block;
-	font-size: 2rem;
-	font-weight:400;
-	text-decoration: none;
-	background-color: var(--primary-color);
-	color: var(--text-color);
 }
 
 #menu::before {
@@ -111,10 +110,142 @@ header h1, h2 {
 	content: "X";
 }
 
-main {
-    padding: 20px;
+
+/*home page */
+.hero {
+    grid-column: 1 / 4;
+    position: relative;
+    text-align: center;
+    max-width: 80%;
+    margin: 0 auto;
 }
 
+.hero img {
+    width: 100%;
+    height: auto;
+}
+
+.hero button {
+    position: absolute;
+    top: 10%;
+    left: 45%;
+    padding: 16px 16px;
+    font-size: 36px;
+    background-color: var(--primary-color); 
+    color: var(--text-color);
+    border: none;
+    cursor: pointer;
+}
+main {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+section h2 {
+    background-color: var(--primary-color);
+    margin-top: 0;
+}
+
+.community-info, .current, .forecast {
+    flex: 1 1 100%;
+    box-sizing: border-box;
+    border: 1px solid var(--text-color);
+    margin: 10px;
+}
+/*curretn weather card*/
+#currentCard {
+    display: flex;
+    align-items:flex-start;
+}
+
+.weather-icon img {
+    width: 100px; 
+    height: auto;
+}
+
+.weather-info {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Container for spotlight cards */
+#spotlight
+{
+    display: flex;
+    flex-wrap: wrap;
+}
+.spotlight-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: auto auto;
+    box-sizing: border-box;
+    border: 1px solid var(--text-color);
+    box-shadow: 0px 4px 8px var(--primary-color);
+    margin: 10px;
+}
+
+/* Member name at the top of the card */
+.spotlight-card h3 {
+    grid-column: 1 / 3; /* Spans the full width of the card */
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    position: relative;
+    box-sizing: border-box;
+}
+
+/* Horizontal line below the name */
+.spotlight-card h3::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: var(--text-color);
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+/* Image styling */
+.spotlight-logo {
+    grid-column: 1 / 2; 
+    margin: auto auto;
+}
+
+.spotlight-logo img {
+    width: 100%;
+    height: auto;
+}
+
+/* Info styling */
+.spotlight-info {
+    grid-column: 2 / 3; 
+    display: flex;
+    flex-direction: column;
+}
+
+/* Forecast Container */
+#forecastCard {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+/* Individual Day Forecast */
+.forecast-day {
+    border: 1px solid var(--secondary-color);
+    border-radius: 10px;
+    padding: 15px;
+    width: 150px;
+    text-align: center;
+    box-shadow: 0px 4px 8px var(--primary-color);
+}
+
+
+/*directory page*/
 .directory {
     padding: 20px;
     background-color: var(--background-color);
@@ -161,7 +292,7 @@ footer {
     background-color: var(--primary-color);
     color: var(--text-color);
     padding: 20px;
-    text-align: center;
+    text-align: left;
 }
 
 @media only screen and (min-width: 40em) {
@@ -178,5 +309,25 @@ footer {
 	#menu {
 		display: none;
 	}
+    main {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .community-info, .current, .forecast {
+        flex: 1 1 30%;
+        box-sizing: border-box;
+        border: 1px solid var(--text-color);
+    }
+    .spotlight-card{
+        flex: 1 1 30%;
+    }
+    footer{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .contact-info,.social-media,.project-info{
+        flex: 1 1 30%;
+    }
+    
 }
 
