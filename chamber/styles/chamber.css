@@ -291,6 +291,77 @@ footer {
     text-align: left;
 }
 
+/*join page*/
+/* Base Styles */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+form.designOne {
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 20px;
+}
+
+form.designOne label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+form.designOne input, form.designOne select, form.designOne textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+/* Membership Card Styles */
+.membership-card {
+    border: 1px solid #ccc;
+    padding: 16px;
+    margin: 10px;
+    width: calc(100% - 20px);
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.membership-card.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Modal Styles */
+dialog {
+    border: none;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 600px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+#modal-content {
+    margin-bottom: 20px;
+}
+button:focus, .membership-card:focus {
+    outline: 3px solid #007BFF;
+}
+
+/* Layout for Small Screens */
+#membership-card {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+
 @media only screen and (min-width: 40em) {
 	.navigation {
 		display: flex;
@@ -325,6 +396,28 @@ footer {
     .contact-info,.social-media,.project-info{
         flex: 1 1 30%;
     }
-    
+    /*join page member cards in big view*/
+    main {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+
+    form.designOne {
+        width: 60%;
+        margin-right: 20px;
+    }
+
+    #membership-card {
+        width: 35%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .membership-card {
+        width: 100%;
+        margin: 10px 0;
+    }    
 }
 

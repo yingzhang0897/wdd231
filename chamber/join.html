@@ -1,12 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Join Us</title>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Portland Chamber of Commerce - Promoting local business and fostering community connections.">
+        <meta name="author" content="Ying Zhang">
+        <title>Join US - Portland Oregon Chamber of Commerce</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles/chamber.css">
+        <!-- Facebook Meta Tags -->
+        <meta property="og:title" content="Portland Chamber of Commerce Business Directory">
+        <meta property="og:type" content="website">
+        <meta property="og:image" content="https://yingzhang0897.github.io/wdd231/chamber/images/icon.webp">
+        <meta property="og:url" content="https://yingzhang0897.github.io/wdd231/chamber/directory.html">
+        <link rel="icon" href="icon.ico" type="image/x-icon">
+        <script src="scripts/header-footer.js" defer></script>
+        <script src="scripts/join.js" defer></script>
+    </head>
+    <body>
     <header>
+        <div class="logo">
+            <img src="images/icon.webp" alt="Portland Chamber of Commerce Logo" width="100" loading="lazy">
+        </div>
+        <div class="header-title">
+            <h1>Portland Oregon</h1>
+            <h2>Chamber of Commerce</h2>
+        </div>
+        <div class="facebook">
+            <a href="http://www.facebook.com" target="_blank"><img src="images/fb.webp" width="60" alt="facebook logo"></a>
+        </div>
         <nav>
             <a id="menu" href="#"></a>
             <ul class="navigation">
@@ -16,11 +40,57 @@
                 <li><a href="join.html">Join</a></li>
             </ul>
         </nav>
-        <div class="header-today">
-            <h3></h3>
-        </div>    
     </header>
+    <div class="header-today">
+        <h3></h3>
+    </div>   
+    <main>
+    
+        <form method="GET" action="thankyou.html" class="designOne">
+            <label>First Name <input type="text" name="first" required autocomplete="given-name" title="Your First Name"></label>
+            <label>Last Name <input type="text" name="last" required autocomplete="family-name" title="Your Last Name"></label>
+            <label>Organizational Title <input type="text" name="title" required autocomplete="organization-title" pattern="[A-Za-z\s-]{7,}" title="over seven characters with letters, hyphens, and spaces." placeholder="Organizational Title"></label>
+            <label>Email <input type="email" name="email" required placeholder="john89@gmail.com"  title="Your Email" autocomplete="email"></label>
+            <label>Cell Phone <input type="tel" name="phone"  autocomplete="tel" title="A Phone Number with dashes" placeholder="987-555-1234" ></label>
+            <label>Business/Organization's name<input type="text" name="organization" required autocomplete="organization" title="business/organization's name"></label>
 
     
+            <label>Membership Level
+              <select name="membership">
+                <option value="NP Membership">NP Membership</option>
+                <option value="Bronze Membership">Bronze Membership</option>
+                <option value="Silver Membership">Silver Membership</option>
+                <option value="Gold Membership">Gold Membership</option>
+            </label>    
+            <label>Descripton<textarea name="description" title="Business/Organization Description"></textarea></label>
+            <label>Submission Date and Time<input  type="hidden" name="timestamp" id="timestamp" value=""></label>
+            <input type="submit" value="Join US">
+        </form>
+        <div id="membership-card" tabindex="0"></div>
+        <dialog id="membership-modal" aria-labelledby="modal-title" aria-modal="true">
+            <div id="modal-content"></div>
+            <button onclick="closeModal()">Close</button>
+        </dialog>
+
+    </main>
+    <footer>
+        <div class="contact-info">
+            <h3>Portland Chamber of Commerce</h3>
+            <p>123 Main St, Portland, OR</p>
+            <p>Email: info@portlandcc.org</p>
+            <p>Phone: (555) 123-4567</p>
+        </div>
+        <div class="social-media">
+            <img src="images/youtube.webp" alt="youtube logo" width="100">
+            <img src="images/twitter.webp" alt="twitter logo" width="100">
+            <img src="images/linkedin.webp" alt="linkedin logo" width="100">
+        </div>
+        <div class="project-info">
+            <p>WDD231 Class Project</p>
+            <p>YIng Zhang</p>
+            <p>&copy; <span id="currentYear"></span>Portland Oregon Chamber of Commerce</p>
+            <p>Last Modified: <span id="lastModified"></span></p>
+        </div>
+    </footer>
 </body>
 </html>
