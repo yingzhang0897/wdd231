@@ -125,6 +125,59 @@ button {
     margin-top: 20px;
 }
 
+/* Basic styling for the dialog */
+dialog {
+    position: fixed; /* Keeps the dialog in a fixed position on the screen */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centers the dialog */
+    width: 50%;
+    max-width: 80%; 
+    background-color: #fff; /* Background color for the dialog */
+    border: 1px solid #ccc; /* Light border around the dialog */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Inner spacing */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+}
+
+/* Styling for the backdrop overlay */
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent dark background */
+    backdrop-filter: blur(1px); /* Adds a blur effect to the backdrop */
+}
+
+/* Close button styling */
+#closeModal {
+    position: absolute; /* Position the button inside the dialog */
+    top: 10px;
+    right: 10px;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.3s;
+    background: none;
+}
+
+/* Animation for dialog appearance */
+dialog[open] {
+    animation: showDialog 0.3s ease-out;
+}
+
+@keyframes showDialog {
+    from {
+        opacity: 0;
+        transform: translate(-10%, -10%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+
+dialog h2, dialog h3, dialog p {
+    margin-bottom: 15px; 
+}
 
 
 
