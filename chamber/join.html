@@ -42,7 +42,6 @@
         </nav>
     </header>
     <div class="header-today">
-        <h3></h3>
         <h2> Welcome to Join us today!</h2>
     </div>   
     
@@ -57,21 +56,22 @@
             <label>Business/Organization's name<input type="text" name="organization" required autocomplete="organization" title="business/organization's name"></label>
 
     
-            <label>Membership Level
-              <select name="membership">
-                <option value="NP Membership">NP Membership</option>
-                <option value="Bronze Membership">Bronze Membership</option>
-                <option value="Silver Membership">Silver Membership</option>
-                <option value="Gold Membership">Gold Membership</option>
-            </label>   
-
-            <label>Description</label>
-            <textarea name="description" title="Business/Organization Description"></textarea>
+            <label>Membership Level 
+                <select name="membership">
+                    <option value="NP Membership">NP Membership</option>
+                    <option value="Bronze Membership">Bronze Membership</option>
+                    <option value="Silver Membership">Silver Membership</option>
+                    <option value="Gold Membership">Gold Membership</option>
+                </select>
+            </label> 
+            <label>Description
+                <textarea name="description" title="Business/Organization Description"></textarea>
+            </label>
             <input type="hidden" name="timestamp" id="timestamp" value="">
             <input type="submit" value="Join Us">
         </form>
         <div id="membership-card" tabindex="0"></div>
-        <dialog id="membership-modal" aria-labelledby="modal-title" aria-modal="true">
+        <dialog id="membership-modal" aria-labelledby="modal-content" aria-modal="true"  open>
             <div id="modal-content"></div>
             <button onclick="closeModal()">Close</button>
         </dialog>
