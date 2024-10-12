@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portland Chamber of Commerce - Promoting local business and fostering community connections.">
+    <meta name="author" content="Ying Zhang">
+    <title>Thank You - Portland Oregon Chamber of Commerce</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/chamber.css">
+    <link rel="icon" href="icon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/icon.webp" alt="Portland Chamber of Commerce Logo" width="100" loading="lazy">
+        </div>
+        <div class="header-title">
+            <h1>Portland Oregon</h1>
+            <h2>Chamber of Commerce</h2>
+        </div>
+        <nav>
+            <ul class="navigation">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="discover.html">Discover</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="join.html">Join</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Thank You for Joining Us!</h1>
+        <p>We appreciate you filling out the form. Below is the information you provided:</p>
+        <div class="user-info" id="user-info">
+            <p><strong>First Name:</strong> <span id="firstName"></span></p>
+            <p><strong>Last Name:</strong> <span id="lastName"></span></p>
+            <p><strong>Email:</strong> <span id="email"></span></p>
+            <p><strong>Mobile Number:</strong> <span id="phone"></span></p>
+            <p><strong>Business/Organization Name:</strong> <span id="organization"></span></p>
+            <p><strong>Submission Date and Time:</strong> <span id="timestamp"></span></p>
+        </div>
+        <p>If any of this information is incorrect, please <a href="join.html">go back and update the form</a>.</p>
+    </main>
+    <footer>
+        <div class="contact-info">
+            <h3>Portland Chamber of Commerce</h3>
+            <p>123 Main St, Portland, OR</p>
+            <p>Email: info@portlandcc.org</p>
+            <p>Phone: (555) 123-4567</p>
+        </div>
+        <div class="project-info">
+            <p>WDD231 Class Project</p>
+            <p>Ying Zhang</p>
+            <p>&copy; <span id="currentYear"></span> Portland Oregon Chamber of Commerce</p>
+            <p>Last Modified: <span id="lastModified"></span></p>
+        </div>
+    </footer>
+    <script>
+        // Display the current year in the footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        document.getElementById('lastModified').textContent = document.lastModified;
+
+        // Function to get query parameters from the URL
+        function getQueryParameter(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        // Display the user information from the query parameters
+        document.getElementById('firstName').textContent = getQueryParameter('first') || 'N/A';
+        document.getElementById('lastName').textContent = getQueryParameter('last') || 'N/A';
+        document.getElementById('email').innerHTML = getQueryParameter('email') ||  `<a href="mailto:${email}">${email}</a>`;
+        document.getElementById('phone').textContent = getQueryParameter('phone') || 'N/A';
+        document.getElementById('organization').textContent = getQueryParameter('organization') || 'N/A';
+        document.getElementById('timestamp').textContent = getQueryParameter('timestamp') || 'N/A';
+    </script>
+</body>
+</html>
