@@ -36,12 +36,12 @@
         <div class="user-info" id="user-info">
             <p><strong>First Name:</strong> <span id="firstName"></span></p>
             <p><strong>Last Name:</strong> <span id="lastName"></span></p>
-            <p><strong>Email:</strong> <span id="email"></span></p>
+            <p><strong>Email:</strong> <a id="email" href="#"></a></p>
             <p><strong>Mobile Number:</strong> <span id="phone"></span></p>
             <p><strong>Business/Organization Name:</strong> <span id="organization"></span></p>
             <p><strong>Submission Date and Time:</strong> <span id="timestamp"></span></p>
         </div>
-        <p>If any of this information is incorrect, please <a href="join.html">go back and update the form</a>.</p>
+        <p>If any of this information is incorrect, please <a href="join.html">go back and update the form</a></p>
     </main>
     <footer>
         <div class="contact-info">
@@ -71,7 +71,7 @@
         // Display the user information from the query parameters
         document.getElementById('firstName').textContent = getQueryParameter('first') || 'N/A';
         document.getElementById('lastName').textContent = getQueryParameter('last') || 'N/A';
-        document.getElementById('email').innerHTML = getQueryParameter('email') ||  `<a href="mailto:${email}">${email}</a>`;
+        document.getElementById('email').innerHTML = getQueryParameter('email') ||  `mailto:${email}`;
         document.getElementById('phone').textContent = getQueryParameter('phone') || 'N/A';
         document.getElementById('organization').textContent = getQueryParameter('organization') || 'N/A';
         document.getElementById('timestamp').textContent = getQueryParameter('timestamp') || 'N/A';

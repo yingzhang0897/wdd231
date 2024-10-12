@@ -292,7 +292,6 @@ footer {
 }
 
 /*join page*/
-/* Base Styles */
 main {
     display: flex;
     flex-direction: column;
@@ -308,19 +307,47 @@ form.designOne {
 
 form.designOne label {
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: black;
 }
 
-form.designOne input, form.designOne select, form.designOne textarea {
+form.designOne input, form.designOne select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    box-sizing: border-box;
+    border-left-width: 10px;
+}
+form.designOne textarea {
     width: 100%;
     padding: 8px;
     margin-top: 5px;
     box-sizing: border-box;
 }
+input:required {border-left-color: red;}
+input:required:valid{border-left-color: rgb(18, 138, 18);}
+
+input[type=submit] {
+    border: none;
+    text-align: center;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border-radius: 1rem;
+    padding: .75rem 1.5rem;
+    margin: 2rem 0;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+input[type="submit"]:hover {
+    transform: scale(1.2); 
+}
+
 
 /* Membership Card Styles */
 .membership-card {
-    border: 1px solid #ccc;
+    border: 1px solid var(--text-color);
     padding: 16px;
     margin: 10px;
     width: calc(100% - 20px);
@@ -328,6 +355,7 @@ form.designOne input, form.designOne select, form.designOne textarea {
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    box-shadow: 0 4px 8px rgba(46, 153, 215, 1);
 }
 
 .membership-card.fade-in {
@@ -342,13 +370,13 @@ dialog {
     width: 90%;
     max-width: 600px;
     padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(46, 153, 215, 1);
 }
 #modal-content {
     margin-bottom: 20px;
 }
 button:focus, .membership-card:focus {
-    outline: 3px solid #007BFF;
+    cursor: pointer;
 }
 
 /* Layout for Small Screens */
