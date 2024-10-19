@@ -10,13 +10,18 @@ async function fetchMembers() {
         const memberCard = document.createElement('div');
         memberCard.classList.add('business-card');
 
-        memberCard.innerHTML = `
+        let memberContent = `
             <h3>${member.name}</h3>
             <p>${member.address}</p>
             <p>Phone: ${member.phone}</p>
             <p>Website: <a href="${member.website}">${member.website}</a></p>
-            <img src="${member.image}" alt="${member.name} logo" width="200">
         `;
+
+        if (!directoryContainer.classList.contains('list-view')) {
+            memberContent += `<img src="${member.image}" alt="${member.name} logo" width="200">`;
+        }
+
+        memberCard.innerHTML = memberContent;
         directoryContainer.appendChild(memberCard);
     });
 }
@@ -25,13 +30,14 @@ async function fetchMembers() {
 document.getElementById('gridView').addEventListener('click', () => {
     document.getElementById('directory-container').classList.remove('list-view');
     document.getElementById('directory-container').classList.add('grid-view');
+    fetchMembers();
 });
 
 document.getElementById('listView').addEventListener('click', () => {
     document.getElementById('directory-container').classList.remove('grid-view');
     document.getElementById('directory-container').classList.add('list-view');
+    fetchMembers();
 });
-
 
 // Call the function to fetch and display members
 fetchMembers();
