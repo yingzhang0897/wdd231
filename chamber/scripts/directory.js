@@ -1,12 +1,27 @@
-// Fetch member data and display it on the page
-async function fetchMembers() {
-    const response = await fetch('data/members.json');
-    const members = await response.json();
+let cachedMembers = [];
 
+async function fetchMembers() {
+    const directoryContainer = document.getElementById('directory-container');
+    directoryContainer.innerHTML = '<p>Loading members...</p>';
+
+    try {
+        const response = await fetch('data/members.json');
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        cachedMembers = await response.json();
+        renderMembers();
+    } catch (error) {
+        console.error('There has been a problem with your fetch operation:', error);
+        directoryContainer.innerHTML = '<p>Error loading member information. Please try again later.</p>';
+    }
+}
+
+function renderMembers() {
     const directoryContainer = document.getElementById('directory-container');
     directoryContainer.innerHTML = '';  // Clear any existing content
 
-    members.forEach(member => {
+    cachedMembers.forEach(member => {
         const memberCard = document.createElement('div');
         memberCard.classList.add('business-card');
 
@@ -14,7 +29,7 @@ async function fetchMembers() {
             <h3>${member.name}</h3>
             <p>${member.address}</p>
             <p>Phone: ${member.phone}</p>
-            <p>Website: <a href="${member.website}">${member.website}</a></p>
+            <p>Website: <a href="${member.website}" target="_blank" rel="noopener noreferrer">${member.website}</a></p>
         `;
 
         if (!directoryContainer.classList.contains('list-view')) {
@@ -26,18 +41,17 @@ async function fetchMembers() {
     });
 }
 
-// Toggle between Grid and List views
 document.getElementById('gridView').addEventListener('click', () => {
     document.getElementById('directory-container').classList.remove('list-view');
     document.getElementById('directory-container').classList.add('grid-view');
-    fetchMembers();
+    renderMembers();
 });
 
 document.getElementById('listView').addEventListener('click', () => {
     document.getElementById('directory-container').classList.remove('grid-view');
     document.getElementById('directory-container').classList.add('list-view');
-    fetchMembers();
+    renderMembers();
 });
 
-// Call the function to fetch and display members
+// Initial fetch and render
 fetchMembers();
