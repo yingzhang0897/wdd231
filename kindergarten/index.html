@@ -13,14 +13,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
     <style>
         /* Header Styles with Hamburger Menu */
-        header {
+        header, footer {
             display: flex;
             align-items: center;
             justify-content: space-between;
             padding: 20px;
             background-color: var(--primary-color);
             position: relative;
-            font-family: var(--title-font);
+            font-family: var(--heading-font);
+            font-size: large;
+            font-style: italic;
         }
 
         header img {
@@ -42,53 +44,68 @@
             text-align: center;
         }
 
-        .hamburger {
-            display: flex;
-            flex-direction: column;
-            cursor: pointer;
-        }
-
-        .hamburger div {
-            width: 25px;
-            height: 3px;
-            background-color: var(--text-color);
-            margin: 3px;
-        }
-
-        nav {
-            display: none;
-            flex-direction: column;
-            background-color: var(--background-color);
+        #menu {
+            font-size: 1.5rem;
+            border: 0;
+            background: none;
+            color: var(--text-color);
             position: absolute;
-            top: 60px;
-            right: 20px;
-            width: 200px;
-            border: 1px solid var(--text-color);
-            border-radius: 5px;
-            padding: 10px;
+            top: 1rem;
+            right: 1rem;
         }
 
-        nav.active {
+        #menu::before {
+            content: "☰";
+        }
+
+        #menu.open::before {
+            content: "❎";
+        }
+
+
+        .navigation {
             display: flex;
+            flex-direction: column;
+            list-style: none;
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            font-weight: var(--font-weight);
         }
 
+        .navigation a {
+            display: none;
+            padding: 1rem;
+            text-align: center;
+            text-decoration: none;
+            color: var(--text-color);
+        }
+        .navigation a:hover {
+            background-color: var(--text-color);
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+    /* when the button is clicked - the open class is toggled (added/removed) */
+        .open a {
+            display: block;
+        }
+
+        .active::before { 
+            content: "📍";  /* just a wayfinding symbol for the user */
+        }
         /* Navigation Styles for wider screens */
         @media (min-width: 768px) {
-            .hamburger {
-                display: none;
-            }
-
-            nav {
-                display: flex;
-                position: static;
-                flex-direction: row;
-                gap: 20px;
-                border: none;
-                background-color: transparent;
-                padding: 0;
-            }
+            #menu {
+                display: none; /* hide hamburger button */
         }
 
+        .navigation {
+            flex-direction: row;
+        }
+        .navigation a {
+            display: block;
+            flex: 1 1 100%;
+        }
         nav a {
             color: var(--text-color);
             text-decoration: none;
@@ -104,13 +121,10 @@
             <h1>August's Bilingual Kindergarten</h1>
             <h1>颖颖的双语幼儿园</h1>
         </div>
-        <div class="hamburger" onclick="toggleMenu()">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-        <nav id="nav-menu">
-            <a href="#about-us">About Us</a>
+        <button type="button" id="menu"></button>
+        
+        <nav class="navigation">
+            <a href="#about-us" class="active">About Us</a>
             <a href="#discover">Discover</a>
             <a href="#directory">Directory</a>
             <a href="#enroll">Enroll</a>
@@ -152,16 +166,19 @@
         </div>
         <div class="social-media">
             <img src="images/youtube.webp" alt="youtube logo" width="100">
-            <img src="images/twitter.webp" alt="twitter logo" width="100">
-            <img src="images/linkedin.webp" alt="linkedin logo" width="100">
+            <img src="images/twitter.webp" alt="facebook logo" width="100">
+            <img src="images/linkedin.webp" alt="wechat logo" width="100">
         </div>
         <p>&copy; 2024 August's Bilingual Kindergarten.  颖颖的双语幼儿园 All Rights Reserved.</p>
     </footer>
     <script>
-        function toggleMenu() {
-            const nav = document.getElementById('nav-menu');
-            nav.classList.toggle('active');
-        }
+        const hamButton = document.querySelector('#menu');
+        const navigation = document.querySelector('.navigation');
+
+        hamButton.addEventListener('click', () => {
+            navigation.classList.toggle('open');
+            hamButton.classList.toggle('open');
+        });
     </script>
 
 </body>
