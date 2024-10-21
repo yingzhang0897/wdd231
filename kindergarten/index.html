@@ -1,28 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ying Zhang's Kindergarten</title>
+    <title>August's Kindergarten</title>
+    <meta name="description" content="Here you can find all you want to know about August's kindergarten">
+    <meta name="author" content="Ying Zhang">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="styles/kindergarten.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+    <style>
+        /* Header Styles with Hamburger Menu */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: var(--primary-color);
+            position: relative;
+            font-family: var(--title-font);
+        }
+
+        header img {
+            width: 100px;
+            flex-shrink: 0;
+        }
+
+        header .title-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex-grow: 1;
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            margin: 0;
+            color: var(--text-color);
+            text-align: center;
+        }
+
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: var(--text-color);
+            margin: 3px;
+        }
+
+        nav {
+            display: none;
+            flex-direction: column;
+            background-color: var(--background-color);
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            width: 200px;
+            border: 1px solid var(--text-color);
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        nav.active {
+            display: flex;
+        }
+
+        /* Navigation Styles for wider screens */
+        @media (min-width: 768px) {
+            .hamburger {
+                display: none;
+            }
+
+            nav {
+                display: flex;
+                position: static;
+                flex-direction: row;
+                gap: 20px;
+                border: none;
+                background-color: transparent;
+                padding: 0;
+            }
+        }
+
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 1rem;
+        }
+    </style>
 </head>
 
 <body>
     <header>
-        <h1>Sunny Days Kindergarten</h1>
-        <p>Where learning meets fun!</p>
+        <img src="images/logo.webp" alt="logo" width="100" loading="lazy">
+        <div class="title-container">
+            <h1>August's Bilingual Kindergarten</h1>
+            <h1>颖颖的双语幼儿园</h1>
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <nav id="nav-menu">
+            <a href="#about-us">About Us</a>
+            <a href="#discover">Discover</a>
+            <a href="#directory">Directory</a>
+            <a href="#enroll">Enroll</a>
+        </nav>
     </header>
-
-    <nav>
-        <ul>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#programs">Programs</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-
+    
     <section id="about">
         <h2>About Us</h2>
         <p>Welcome to Sunny Days Kindergarten! We provide a nurturing environment where children can grow, learn, and play.</p>
@@ -51,8 +145,25 @@
     </section>
 
     <footer>
-        <p>&copy; 2024 Sunny Days Kindergarten. All Rights Reserved.</p>
+        <div class="contact-info">
+            <p>123 Main St, Portland, OR</p>
+            <p>Email: info@portlandcc.org</p>
+            <p>Phone: (555) 123-4567</p>
+        </div>
+        <div class="social-media">
+            <img src="images/youtube.webp" alt="youtube logo" width="100">
+            <img src="images/twitter.webp" alt="twitter logo" width="100">
+            <img src="images/linkedin.webp" alt="linkedin logo" width="100">
+        </div>
+        <p>&copy; 2024 August's Bilingual Kindergarten.  颖颖的双语幼儿园 All Rights Reserved.</p>
     </footer>
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById('nav-menu');
+            nav.classList.toggle('active');
+        }
+    </script>
+
 </body>
 
 </html>
