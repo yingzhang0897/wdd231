@@ -16,18 +16,13 @@
         header, footer {
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: space-around;
             padding: 20px;
             background-color: var(--primary-color);
             position: relative;
             font-family: var(--heading-font);
             font-size: large;
             font-style: italic;
-        }
-
-        header img {
-            width: 100px;
-            flex-shrink: 0;
         }
 
         header .title-container {
@@ -131,9 +126,10 @@
         </nav>
     </header>
     
-    <section id="about">
-        <h2>About Us</h2>
-        <p>Welcome to Sunny Days Kindergarten! We provide a nurturing environment where children can grow, learn, and play.</p>
+    <h4>Welcome to August's bilingual Kindergarten! We nourish each child with love.</h4>
+    <section id="hero">
+        <img src="images/hero.jpeg" alt="classroom scenario" loading="lazy">
+        <button>Enroll</button>
     </section>
 
     <section id="programs">
@@ -145,31 +141,31 @@
         </ul>
     </section>
 
-    <section id="gallery">
-        <h2>Gallery</h2>
-        <img src="images/kids_playing.jpg" alt="Kids playing">
-        <img src="images/classroom.jpg" alt="Classroom">
+    <section id="events">
+        <h2>Upcoming Events</h2>
     </section>
 
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Email: info@sunnydayskindergarten.com</p>
-        <p>Phone: (123) 456-7890</p>
-        <p>Address: 123 Sunshine Lane, Happy Town</p>
-    </section>
+    <section id="current-weather"></section>
+    <section id="weather-forecast"></section>
+
 
     <footer>
         <div class="contact-info">
-            <p>123 Main St, Portland, OR</p>
-            <p>Email: info@portlandcc.org</p>
-            <p>Phone: (555) 123-4567</p>
+            <p>Email: kindergarteninfo@comcast.net/p>
+            <p>Phone: (123) 456-7890</p>
+            <p>Address: 5601 SE 50th Ave, Portland, OR 97206</p>
         </div>
         <div class="social-media">
             <img src="images/youtube.webp" alt="youtube logo" width="100">
-            <img src="images/twitter.webp" alt="facebook logo" width="100">
-            <img src="images/linkedin.webp" alt="wechat logo" width="100">
+            <img src="images/facebook.png" alt="facebook logo" width="100">
+            <img src="images/wechat.png"wechat logo" width="100">
         </div>
-        <p>&copy; 2024 August's Bilingual Kindergarten.  颖颖的双语幼儿园 All Rights Reserved.</p>
+        <div clcass="google-map"></div>
+        <div class="title-container">
+            <p>&copy; 2024
+            <h1>August's Bilingual Kindergarten</h1>
+            <h1>颖颖的双语幼儿园</h1>
+        </div>
     </footer>
     <script>
         const hamButton = document.querySelector('#menu');
@@ -180,6 +176,8 @@
             hamButton.classList.toggle('open');
         });
     </script>
+    <script src="scripts/events.js" type="module" ></script>
+    <script src="scripts/weather.js" type="module" ></script>
 
 </body>
 
