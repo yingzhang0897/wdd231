@@ -1,6 +1,6 @@
-const currentUrl = "https://api.openweathermap.org/data/2.5/weather?lat=45.48&lon=-122.21&appid=f098769938b919132231d5a3587a6cbb&units=imperial';
+export const currentUrl = "https://api.openweathermap.org/data/2.5/weather?lat=45.48&lon=-122.21&appid=f098769938b919132231d5a3587a6cbb&units=imperial";
 
-async function fetchWeatherData() {
+export async function fetchWeatherData() {
     try {
         const response = await fetch(currentUrl);
         const data = await response.json();
@@ -17,7 +17,8 @@ async function fetchWeatherData() {
             <div class="weather-icon">
                 <img src="https://openweathermap.org/img/wn/${icon}@2x.png" alt="Weather icon">
             </div>       
-            <div class="weather-info">     
+            <div class="weather-info">   
+                <p>Current Weather</p>  
                 <p>Temperature: ${temp} °F</p>
                 <p>Description: ${description}</p>
                 <p>High: ${tempHigh} °F</p>
@@ -26,18 +27,18 @@ async function fetchWeatherData() {
         `;
 
         // Insert the weather card into the div with id "currentCard"
-        document.getElementById('ccurrent-weather').innerHTML = weatherHtml;
+        document.getElementById('current-weather').innerHTML = weatherHtml;
 
     } catch (error) {
         console.error("Error fetching the weather data: ", error);
     }
 }
-fetchWeatherData();
+
 
 //weather forecast
-const apiUrl = "https://api.openweathermap.org/data/2.5/forecast?lat=45.48&lon=-122.21&appid=f098769938b919132231d5a3587a6cbb&units=imperial";
+export const apiUrl = "https://api.openweathermap.org/data/2.5/forecast?lat=45.48&lon=-122.21&appid=f098769938b919132231d5a3587a6cbb&units=imperial";
 
-async function displayWeatherForecast() {
+export async function displayWeatherForecast() {
     try {
       // Fetch data from the API
       const response = await fetch(apiUrl);
@@ -73,7 +74,11 @@ async function displayWeatherForecast() {
   
       // Get the forecastCard element to display the data
     const forecastCard = document.getElementById('weather-forecast');
+  
     forecastCard.innerHTML = '';
+    /// Create a title for the forecast section
+    const title = document.createElement('p');
+    title.textContent = `Weather Forecast`;
 
     // Create a list to display daily average temperatures
     const ul = document.createElement('ul');
@@ -91,6 +96,7 @@ async function displayWeatherForecast() {
     });
 
     // Append the list to the forecastCard div
+    forecastCard.appendChild(title);
     forecastCard.appendChild(ul);
 
     } catch (error) {
@@ -100,6 +106,5 @@ async function displayWeatherForecast() {
     }
 }
   
-  // Call the function to display the weather forecast
-displayWeatherForecast();
+
   
