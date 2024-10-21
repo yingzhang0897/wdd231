@@ -32,20 +32,29 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     //pick of the week
-    import ('./pick-of-week.js').then(module => {
-        const picks = module. pickOfTheWeek;
+    // Pick of the week
+    import('./pick-of-week.js').then(module => {
+        const picks = module.pickOfTheWeek;
         const pickSection = document.getElementById("pick-of-the-week");
+
         if (pickSection) {
             picks.forEach(pick => {
-                const pickElement = document.createElement('div');
-                pickElement.innerHTML = `
+                // Create a container div element for each pick of the week
+                const pickContainer = document.createElement('div');
+                pickContainer.classList.add('pick-container'); // Adding a class for styling purposes
+
+                // Set the HTML content of the pickContainer
+                pickContainer.innerHTML = `
                     <img src="${pick.img}" alt="${pick.name}" width="150">
                     <h3>${pick.name}</h3>
                     <p>Age: ${pick.age}</p>
-                    <p>$ {pick.description}</P>
+                    <p>${pick.description}</p>
                 `;
-                pickSection.appendChild(pickElement);
+
+                // Append the pickContainer to the pickSection
+                pickSection.appendChild(pickContainer);
             });
         }
     });
+
 });
