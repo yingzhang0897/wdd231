@@ -25,7 +25,7 @@
             font-style: italic;
         }
 
-        header .title-container {
+        .title-container {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -37,6 +37,7 @@
             margin: 0;
             color: var(--text-color);
             text-align: center;
+
         }
 
         #menu {
@@ -79,6 +80,53 @@
             color: var(--primary-color);
             font-weight: 700;
         }
+        h4 {
+            text-align: center;
+        }
+        #hero {
+            position: relative; 
+            width: 100%; 
+            max-width: 1000px; 
+            margin: 0 auto; 
+        }
+        #hero img {
+            width: 100%; 
+            height: auto; 
+            display: block; 
+        }
+        #hero button {
+            position: absolute;
+            top:50%;
+            left: 50%;
+            border: none;
+            border-radius: 10px;
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            padding: 10px;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+        #hero button:hover {
+            background-color: var(--text-color);
+            color: var(--primary-color);
+        }
+        .item-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        #programs,
+        #events,
+        #current-weather,
+        #weather-forecast {
+            padding: 20px;
+            margin: 10px;
+            background-color: var(--blue-color); 
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
+        }
+
 
     /* when the button is clicked - the open class is toggled (added/removed) */
         .open a {
@@ -106,6 +154,10 @@
             text-decoration: none;
             font-size: 1rem;
         }
+        .item-container {
+            flex-direction: row;
+            margin: 0 auto; 
+        }
     </style>
 </head>
 
@@ -127,28 +179,32 @@
     </header>
 
     <main>
-        <h4>Welcome to August's bilingual Kindergarten! We nourish each child with love.</h4>
+        <div class="title-container">
+            <h4>Welcome to August's bilingual Kindergarten! We nourish each child with love.</h4>
+            <h4>欢迎来到颖颖的双语幼儿园！ 我们用爱滋养每一个孩子。</h4>
+        </div>
+
         <section id="hero">
             <img src="images/hero.jpeg" alt="classroom scenario" loading="lazy">
             <button>Enroll</button>
         </section>
 
-        <section id="programs">
-            <h2>Our Programs</h2>
-            <ul>
-                <li>Preschool</li>
-                <li>Kindergarten</li>
-                <li>After-school Activities</li>
-            </ul>
-        </section>
-
-        <section id="events">
-            <h2>Upcoming Events</h2>
-        </section>
-
-        <section id="current-weather"></section>
-
-        <section id="weather-forecast"></section>
+        <div class="item-container">
+            <section id="programs">
+                <h2>Our Programs</h2>
+                <ul>
+                    <li>Preschool</li>
+                    <li>Kindergarten</li>
+                    <li>After-school Activities</li>
+                </ul>
+            </section>
+            <section id="events">
+                <h2>Upcoming Events</h2>
+            </section>
+            <section id="current-weather"></section>
+            <section id="weather-forecast"></section>
+            <section id="pick-of-the-week"></section>
+        </div>
     </main>
     
     <footer>
@@ -169,7 +225,7 @@
             <h1>颖颖的双语幼儿园</h1>
         </div>
     </footer>
-    
-    <script type="module" src="scripts/aboutus.js"></script>
+
+    <script type="module" src="scripts/about-us.js"></script>
 </body>
 </html>
