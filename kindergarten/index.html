@@ -119,12 +119,17 @@
         #programs,
         #events,
         #current-weather,
-        #weather-forecast {
+        #weather-forecast,
+        #pick-of-the-week {
             padding: 20px;
             margin: 10px;
             background-color: var(--blue-color); 
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
+        }
+        #pick-of-the-week {
+            display: flex;
+            flex-direction: column;
         }
 
 
@@ -158,6 +163,10 @@
             flex-direction: row;
             margin: 0 auto; 
         }
+        #pick-of-the-week {
+            flex-direction: row;
+        }
+
     </style>
 </head>
 
