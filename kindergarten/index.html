@@ -125,30 +125,32 @@
             <a href="#enroll">Enroll</a>
         </nav>
     </header>
+
+    <main>
+        <h4>Welcome to August's bilingual Kindergarten! We nourish each child with love.</h4>
+        <section id="hero">
+            <img src="images/hero.jpeg" alt="classroom scenario" loading="lazy">
+            <button>Enroll</button>
+        </section>
+
+        <section id="programs">
+            <h2>Our Programs</h2>
+            <ul>
+                <li>Preschool</li>
+                <li>Kindergarten</li>
+                <li>After-school Activities</li>
+            </ul>
+        </section>
+
+        <section id="events">
+            <h2>Upcoming Events</h2>
+        </section>
+
+        <section id="current-weather"></section>
+
+        <section id="weather-forecast"></section>
+    </main>
     
-    <h4>Welcome to August's bilingual Kindergarten! We nourish each child with love.</h4>
-    <section id="hero">
-        <img src="images/hero.jpeg" alt="classroom scenario" loading="lazy">
-        <button>Enroll</button>
-    </section>
-
-    <section id="programs">
-        <h2>Our Programs</h2>
-        <ul>
-            <li>Preschool</li>
-            <li>Kindergarten</li>
-            <li>After-school Activities</li>
-        </ul>
-    </section>
-
-    <section id="events">
-        <h2>Upcoming Events</h2>
-    </section>
-
-    <section id="current-weather"></section>
-    <section id="weather-forecast"></section>
-
-
     <footer>
         <div class="contact-info">
             <p>Email: kindergarteninfo@comcast.net/p>
@@ -167,18 +169,7 @@
             <h1>颖颖的双语幼儿园</h1>
         </div>
     </footer>
-    <script>
-        const hamButton = document.querySelector('#menu');
-        const navigation = document.querySelector('.navigation');
-
-        hamButton.addEventListener('click', () => {
-            navigation.classList.toggle('open');
-            hamButton.classList.toggle('open');
-        });
-    </script>
-    <script src="scripts/events.js" type="module" ></script>
-    <script src="scripts/weather.js" type="module" ></script>
-
+    
+    <script type="module" src="scripts/aboutus.js"></script>
 </body>
-
 </html>
