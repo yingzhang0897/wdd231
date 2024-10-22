@@ -353,6 +353,14 @@ fieldset label input[type="radio"] {
 .program-card button:hover, .term-card button:hover {
     background-color: var(--pink-color);
 }
+/*thankyou page*/
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
 
 /* Navigation Styles for wider screens */
 @media (min-width: 768px) {
@@ -385,6 +393,15 @@ fieldset label input[type="radio"] {
         align-items: flex-start;
         justify-content: space-around;
     }
+    /*thankyou page*/
+    
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
     
 
 }
