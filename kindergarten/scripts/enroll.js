@@ -108,6 +108,25 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+    //for the program checkbox and activity radio
+    const programCheckboxes = document.querySelectorAll('#program-checkboxes input[name="program"]');
+    const activityRadios = document.getElementById('activity-radios');
+
+    // Listen for changes on program checkboxes
+    programCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', () => {
+            if (checkbox.value === 'after-school' && checkbox.checked) {
+                activityRadios.style.display = 'block';
+            } else if (checkbox.value === 'after-school' && !checkbox.checked) {
+                activityRadios.style.display = 'none';
+                // Uncheck all radio buttons when hidden
+                activityRadios.querySelectorAll('input[type="radio"]').forEach(radio => {
+                    radio.checked = false;
+                });
+            }
+        });
+    });
+    //date in the footer
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
 });
-document.getElementById('currentYear').textContent = new Date().getFullYear();
 
