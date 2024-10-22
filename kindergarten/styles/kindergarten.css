@@ -11,4 +11,380 @@
     --title-font: 'Dancing Script', serif;
     --font-weight: 400;
 }
+/* for all pages*/
+header, footer {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: var(--primary-color);
+    position: relative;
+    font-family: var(--heading-font);
+    font-size: large;
+    font-style: italic;
+    overflow: auto;
+}
 
+.title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    flex-grow: 1;
+}
+
+header h1 {
+    font-family: var(--heading-font);
+    font-size: 1.5rem;
+    margin: 0;
+    color: var(--text-color);
+    text-align: center;
+
+}
+
+#menu {
+    font-size: 1.5rem;
+    border: 0;
+    background: none;
+    color: var(--text-color);
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+#menu::before {
+    content: "☰";
+}
+
+#menu.open::before {
+    content: "❎";
+}
+
+
+.navigation {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    font-weight: var(--font-weight);
+}
+
+.navigation a {
+    display: none;
+    padding: 1rem;
+    text-align: center;
+    text-decoration: none;
+    color: var(--text-color);
+}
+.navigation a:hover {
+    background-color: var(--text-color);
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+h4 {
+    position: relative;
+    font-size: 1rem;
+    color: var(--text-color);
+    text-align: center;
+    padding: 16px 0;
+    margin: 10px 0;
+    background: linear-gradient(to right, #ffcc99, #ff6699, #ffcc99);
+    border-radius: 12px;
+    box-shadow: 10px 10px 20px rgba(255, 102, 153, 0.6);
+}
+
+h4::before,
+h4::after {
+    content: '★';
+    position: absolute;
+    font-size: 1.5rem;
+    color: #fff;
+    animation: sparkle 1s infinite alternate;
+}
+
+h4::before {
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+h4::after {
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@keyframes sparkle {
+    from {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+dialog {
+    position: fixed;
+    z-index: 1000;
+    padding: 20px;
+    border: none;
+    width: 80%;
+    max-width: 600px;
+    margin: auto;
+    border-radius: 8px;
+    background-color: whitesmoke;
+    box-shadow: 0 4px 8px rgba(46, 153, 215, 1);
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+.modal-body {
+    margin-bottom: 20px;
+}
+.contact-info {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+.google-map iframe {
+    border-radius: 8px;
+}
+.title-container a {
+    color: var(--text-color);
+    text-decoration: none; 
+}
+/* when the button is clicked - the open class is toggled (added/removed) */
+.open a {
+    display: block;
+}
+
+.active::before { 
+    content: "📍";  /* just a wayfinding symbol for the user */
+}
+
+
+/*home page*/
+#hero {
+    position: relative; 
+    width: 100%; 
+    max-width: 1000px; 
+    margin: 0 auto; 
+}
+#hero img {
+    width: 100%; 
+    height: auto; 
+    display: block; 
+}
+#hero button {
+    position: absolute;
+    top:50%;
+    left: 50%;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 10px;
+    font-size: 2rem;
+    cursor: pointer;
+}
+#hero button:hover {
+    background-color: var(--text-color);
+    color: var(--primary-color);
+}
+.item-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+#programs,
+#events,
+#current-weather,
+#weather-forecast,
+#pick-of-the-week {
+    padding: 20px;
+    margin: 10px;
+    background-color: var(--blue-color); 
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
+}
+#pick-of-the-week {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.pick-image {
+    cursor: pointer;
+}
+
+/*join page*/
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+form label {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--heading-font);
+    font-style: var(--heading-font-style);
+    color: var(--text-color);
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="email"],
+form input[type="tel"],
+form textarea,
+form select {
+    padding: 10px;
+    border: 1px solid var(--primary-color);
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+form input[type="submit"] {
+    padding: 12px;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-family: var(--paragraph-font);
+    font-style: var(--paragraph-font-style);
+    transition: background-color 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+    background-color: var(--text-color);
+    color: var(--primary-color);
+}
+
+/* Fieldset Styling */
+fieldset {
+    border: 1px solid var(--primary-color);
+    padding: 10px;
+    border-radius: 4px;
+}
+
+fieldset legend {
+    font-weight: bold;
+    font-family: var(--heading-font);
+    font-style: var(--heading-font-style);
+}
+
+fieldset label {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+fieldset label input[type="radio"] {
+    margin-right: 8px;
+    accent-color: var(--primary-color); /* Changes the color of the radio button */
+}
+
+
+/* Program and Term Cards */
+.program-card, .term-card {
+    border: 1px solid var(--primary-color);
+    padding: 15px;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.program-card:hover, .term-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.program-card h3, .term-card h3 {
+    font-family: var(--heading-font);
+    font-style: var(--heading-font-style);
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+}
+
+.program-card button, .term-card button {
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.program-card button:hover, .term-card button:hover {
+    background-color: var(--pink-color);
+}
+
+/* Navigation Styles for wider screens */
+@media (min-width: 768px) {
+    #menu {
+        display: none; /* hide hamburger button */
+    }  
+
+    .navigation {
+        flex-direction: row;
+    }
+    .navigation a {
+        display: block;
+        flex: 1 1 100%;
+    }
+    nav a {
+        color: var(--text-color);
+        text-decoration: none;
+        font-size: 1rem;
+    }
+    /*home page*/
+    .item-container {
+        flex-flow: row wrap;
+    }
+    #pick-of-the-week {
+        flex-flow: row rap;
+    }
+    /*join page*/
+    main {
+        flex-flow: row wrap;
+        align-items: flex-start;
+        justify-content: space-around;
+    }
+    
+
+}
