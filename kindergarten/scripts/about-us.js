@@ -1,3 +1,5 @@
+import { currentYear } from './date.js';
+
 document.addEventListener('DOMContentLoaded', () => {
     // Non-import hamburger button functionality
     const hamButton = document.querySelector('#menu');
@@ -31,7 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
         displayWeatherForecast();
     });
 
-    //pick of the week
     // Pick of the week
     import('./pick-of-week.js').then(module => {
         const picks = module.pickOfTheWeek;
@@ -45,10 +46,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // Set the HTML content of the pickContainer
                 pickContainer.innerHTML = `
-                    <img src="${pick.img}" alt="${pick.name}" width="150">
-                    <h3>${pick.name}</h3>
-                    <p>Age: ${pick.age}</p>
-                    <p>${pick.description}</p>
+                    <div class="pick-container">
+                        <div class="pick-image" style="flex-grow: 1"><img src="${pick.img}" alt="${pick.name}" width="150"></div>
+                        <div class="pick-info" style="flex-grow: 2">
+                            <h3>${pick.name}</h3>
+                            <p>Age: ${pick.age}</p>
+                            <p>${pick.description}</p>
+                        </div>
+                    <div>
                 `;
 
                 // Append the pickContainer to the pickSection
@@ -56,5 +61,9 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     });
-
+    //date in footer
+    import ('./date.js').then(module => {
+        const currentYear = module.currentYear;
+        document.getElementById('currentYear').textContent = currentYear;
+    });
 });
