@@ -28,9 +28,8 @@
             <a href="#enroll">Enroll</a>
         </nav>
     </header>
-
+    <h4>You are all set! Yay!</h4>
     <main>
-        <h4>You are all set! Yay!</h4>
         <p>We appreciate you filling out the form. Below is the information you provided:</p>
         <div class="user-info" id="user-info">
             <p><strong>First Name:</strong> <span id="firstName"></span></p>
@@ -40,7 +39,6 @@
             <p><strong>Programs:</strong> <span id="programs"></span></p>
             <p><strong>Activity:</strong> <span id="activity"></span></p>
             <p><strong>Term:</strong> <span id="term"></span></p>
-            <p><strong>Description:</strong> <span id="description"></span></p>
             <p><strong>Submission Date and Time:</strong> <span id="timestamp"></span></p>
         </div>
         <p>If any of this information is incorrect, please go back and update the <a href="enroll.html">enroll form</a></p>
@@ -111,10 +109,6 @@
             // Display selected term
             const term = getQueryParameter('term');
             document.getElementById('term').textContent = term || 'N/A';
-    
-            // Display description
-            const description = getQueryParameter('description');
-            document.getElementById('description').textContent = description || 'N/A';
         });
     </script>
 </body>
