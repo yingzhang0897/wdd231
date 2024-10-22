@@ -37,27 +37,45 @@ document.addEventListener('DOMContentLoaded', () => {
     import('./pick-of-week.js').then(module => {
         const picks = module.pickOfTheWeek;
         const pickSection = document.getElementById("pick-of-the-week");
-
+    
+        // Get the <dialog> element and the components within it
+        const modal = document.getElementById("modal");
+        const modalBody = document.querySelector(".modal-body");
+        const closeModal = document.querySelector(".close");
+    
         if (pickSection) {
             picks.forEach(pick => {
-                // Create a container div element for each pick of the week
-                const pickContainer = document.createElement('div');
-                pickContainer.classList.add('pick-container'); // Adding a class for styling purposes
-
-                // Set the HTML content of the pickContainer
-                pickContainer.innerHTML = `
-                    <div class="pick-container">
-                        <div class="pick-image" style="flex-grow: 1"><img src="${pick.img}" alt="${pick.name}" width="150"></div>
-                        <div class="pick-info" style="flex-grow: 2">
-                            <h3>${pick.name}</h3>
-                            <p>Age: ${pick.age}</p>
-                            <p>${pick.description}</p>
-                        </div>
-                    <div>
-                `;
-
-                // Append the pickContainer to the pickSection
-                pickSection.appendChild(pickContainer);
+                // Create an image element for each pick of the week
+                const imgElement = document.createElement('img');
+                imgElement.src = pick.img;
+                imgElement.alt = pick.name;
+                imgElement.width = 150;
+                imgElement.classList.add('pick-image'); // Add class for styling
+    
+                // Add click event to open the dialog and show details
+                imgElement.addEventListener('click', () => {
+                    modalBody.innerHTML = `
+                        <h3>${pick.name}</h3>
+                        <p>Age: ${pick.age}</p>
+                        <p>${pick.description}</p>
+                    `;
+                    modal.showModal(); // Opens the <dialog>
+                });
+    
+                // Append the image element to the pickSection
+                pickSection.appendChild(imgElement);
+            });
+    
+            // Close the dialog when the user clicks the close button
+            closeModal.addEventListener('click', () => {
+                modal.close(); // Closes the <dialog>
+            });
+    
+            // Optional: Close the dialog when clicking outside the modal body
+            modal.addEventListener('click', (event) => {
+                if (event.target === modal) {
+                    modal.close();
+                }
             });
         }
     });

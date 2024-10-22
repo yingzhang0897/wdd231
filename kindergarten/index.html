@@ -176,14 +176,35 @@
         }
         #pick-of-the-week {
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
+            justify-content: space-evenly;
         }
-        .pick-container {
-            display: flex;
+        dialog {
+            position: fixed;
+            z-index: 1000;
+            padding: 20px;
+            border: none;
+            width: 80%;
+            max-width: 600px;
+            margin: auto;
+            border-radius: 8px;
+            background-color: #fff;
         }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 24px;
+            border: none;
+            background: none;
+            cursor: pointer;
+        }
+
         .pick-image {
-            margin: 20px;
+            cursor: pointer;
         }
+
         .contact-info {
             display: flex;
             align-items: flex-start;
@@ -276,6 +297,10 @@
         </div>
         <h4>Pick of the Week!</h4>
         <section id="pick-of-the-week"></section>
+        <dialog id="modal">
+            <button class="close">✖</button>
+            <div class="modal-body"></div>
+        </dialog>
     </main>
     
     <footer>
