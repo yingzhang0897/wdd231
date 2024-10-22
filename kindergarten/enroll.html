@@ -142,6 +142,17 @@
         </div>
         <p>&copy; <span id="currentYear"></span> August's Bilingual Kindergarten 颖颖的双语幼儿园</p>
     </footer>
+    <!--get timestamp before submitting-->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.querySelector('form');
+            const timestampInput = document.getElementById('timestamp');
+    
+            form.addEventListener('submit', () => {
+                timestampInput.value = new Date().toISOString();
+            });
+        });
+    </script>    
     <script type="module" src="scripts/enroll.js"></script>
 </body>
 </html>
