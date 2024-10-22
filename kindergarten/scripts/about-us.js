@@ -1,5 +1,3 @@
-import { currentYear } from './date.js';
-
 document.addEventListener('DOMContentLoaded', () => {
     // Non-import hamburger button functionality
     const hamButton = document.querySelector('#menu');
@@ -39,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const pickSection = document.getElementById("pick-of-the-week");
     
         // Get the <dialog> element and the components within it
-        const modal = document.getElementById("modal");
+        const modal = document.getElementById("pick-modal");
         const modalBody = document.querySelector(".modal-body");
         const closeModal = document.querySelector(".close");
     
@@ -79,9 +77,5 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     });
-    //date in footer
-    import ('./date.js').then(module => {
-        const currentYear = module.currentYear;
-        document.getElementById('currentYear').textContent = currentYear;
-    });
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
 });
