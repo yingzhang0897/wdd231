@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>August's Kindergarten</title>
+    <meta name="description" content="Here you can find all you want to know about August's kindergarten">
+    <meta name="author" content="Ying Zhang">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles/kindergarten.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <img src="images/logo.webp" alt="logo" width="100" loading="lazy">
+        <div class="title-container">
+            <h1>August's Bilingual Kindergarten</h1>
+            <h1>颖颖的双语幼儿园</h1>
+        </div>
+        <button type="button" id="menu"></button>
+        
+        <nav class="navigation">
+            <a href="#about-us" class="active">About Us</a>
+            <a href="#discover">Discover</a>
+            <a href="#directory">Directory</a>
+            <a href="#enroll">Enroll</a>
+        </nav>
+    </header>
+
+    <main>
+        <h4>You are all set! Yay!</h4>
+        <p>We appreciate you filling out the form. Below is the information you provided:</p>
+        <div class="user-info" id="user-info">
+            <p><strong>First Name:</strong> <span id="firstName"></span></p>
+            <p><strong>Last Name:</strong> <span id="lastName"></span></p>
+            <p><strong>Email:</strong> <a id="email" href="#"></a></p>
+            <p><strong>Mobile Number:</strong> <span id="phone"></span></p>
+            <p><strong>Programs:</strong> <span id="programs"></span></p>
+            <p><strong>Activity:</strong> <span id="activity"></span></p>
+            <p><strong>Term:</strong> <span id="term"></span></p>
+            <p><strong>Description:</strong> <span id="description"></span></p>
+            <p><strong>Submission Date and Time:</strong> <span id="timestamp"></span></p>
+        </div>
+        <p>If any of this information is incorrect, please go back and update the <a href="enroll.html">enroll form</a></p>
+    </main>
+    <footer>
+        <div class="title-container">
+            <p>Email: <a href="mailto:kindergarteninfo@comcast.net">kindergarteninfo@comcast.net</a></p>
+            <p>Phone: <a href="tel:+11234567890">(123) 456-7890</a></p>
+            <p>Address: 5601 SE 50th Ave, Portland, OR 97206</p>
+        </div>
+        <div class="google-map">
+            <iframe 
+                width="300" 
+                height="200" 
+                style="border:0;" 
+                loading="lazy" 
+                allowfullscreen 
+                referrerpolicy="no-referrer-when-downgrade" 
+                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDPRwjSrsnYhSsVQ4vV2tYaVNf_ne6FPi8&q=5601+SE+50th+Ave,+Portland,+OR+97206">
+            </iframe>
+        </div>
+        <div class="social-media">
+            <img src="images/youtube.webp" alt="youtube logo" width="100">
+            <img src="images/facebook.png" alt="facebook logo" width="100">
+            <img src="images/wechat.png" alt="wechat logo" width="100">
+        </div>
+        <p>&copy; <span id="currentYear"></span> August's Bilingual Kindergarten 颖颖的双语幼儿园</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Display the current year in the footer
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+    
+            // Function to get query parameters from the URL
+            function getQueryParameter(name) {
+                const urlParams = new URLSearchParams(window.location.search);
+                return urlParams.getAll(name); // Use getAll to handle multiple values
+            }
+    
+            // Display user information from URL parameters
+            document.getElementById('firstName').textContent = getQueryParameter('first') || 'N/A';
+            document.getElementById('lastName').textContent = getQueryParameter('last') || 'N/A';
+    
+            const email = getQueryParameter('email');
+            if (email && email.length > 0) {
+                document.getElementById('email').textContent = email[0];
+                document.getElementById('email').href = `mailto:${email[0]}`;
+            } else {
+                document.getElementById('email').textContent = 'N/A';
+                document.getElementById('email').removeAttribute('href');
+            }
+    
+            document.getElementById('phone').textContent = getQueryParameter('phone') || 'N/A';
+            document.getElementById('timestamp').textContent = getQueryParameter('timestamp') || 'N/A';
+    
+            // Display selected programs
+            const programs = getQueryParameter('program');
+            if (programs.length > 0) {
+                document.getElementById('programs').textContent = programs.join(', ');
+            } else {
+                document.getElementById('programs').textContent = 'N/A';
+            }
+    
+            // Display selected activity
+            const activity = getQueryParameter('activity');
+            document.getElementById('activity').textContent = activity || 'N/A';
+    
+            // Display selected term
+            const term = getQueryParameter('term');
+            document.getElementById('term').textContent = term || 'N/A';
+    
+            // Display description
+            const description = getQueryParameter('description');
+            document.getElementById('description').textContent = description || 'N/A';
+        });
+    </script>
+</body>
+</html>
