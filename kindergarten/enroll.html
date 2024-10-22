@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>August's Kindergarten</title>
+    <meta name="description" content="Here you can find all you want to know about August's kindergarten">
+    <meta name="author" content="Ying Zhang">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles/kindergarten.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <img src="images/logo.webp" alt="logo" width="100" loading="lazy">
+        <div class="title-container">
+            <h1>August's Bilingual Kindergarten</h1>
+            <h1>颖颖的双语幼儿园</h1>
+        </div>
+        <button type="button" id="menu"></button>
+        
+        <nav class="navigation">
+            <a href="#about-us" class="active">About Us</a>
+            <a href="#discover">Discover</a>
+            <a href="#directory">Directory</a>
+            <a href="#enroll">Enroll</a>
+        </nav>
+    </header>
+
+    <main>
+        <form method="GET" action="thankyou.html" class="designOne">
+            <label>First Name <input type="text" name="first" required autocomplete="given-name" title="Your kid's First Name"></label>
+            <label>Last Name <input type="text" name="last" required autocomplete="family-name" title="Your kid's Last Name"></label>
+            <label>Age<input type="number" name="age" required autocomplete="age" title="Your kid's age" placeholder="5"></label>
+            <fieldset>
+                <legend>Gender</legend>
+                
+                <label>
+                    <input type="radio" name="gender" value="male" required>
+                    Male
+                </label>
+                
+                <label>
+                    <input type="radio" name="gender" value="female">
+                    Female
+                </label>
+            </fieldset>
+            <label>Email <input type="email" name="email" required placeholder="john89@gmail.com"  title="Your Email" autocomplete="email"></label>
+            <label>Cell Phone <input type="tel" name="phone"  autocomplete="tel" title="A Phone Number with dashes" placeholder="987-555-1234" ></label>
+
+            <label>Choose a term to start: </label> 
+            <select name="term" required>
+                <option value="winter term">winter term (14 weeks)</option>
+                <option value="spring term">spring term (14 weeks)</option>
+                <option value="summer term">summer term (5 weeks)</option>
+                <option value="fall term">fall term (14 weeks)</option>
+            </select>
+            <label>What you want us know about yout kid
+                <textarea name="description" title="What you want us know about yout kid"></textarea>
+            </label>
+            <input type="hidden" name="timestamp" id="timestamp" value="">
+            <input type="submit" value="Enroll">
+        </form>
+        <div id="program-card" tabindex="0"></div>
+        <dialog id="program-modal" aria-labelledby="modal-content" aria-modal="true">
+            <button class="close">✖</button>
+            <div class="modal-body"></div>
+        </dialog>
+        <div id="term-card" tabindex="0"></div>
+        <dialog id="term-modal" aria-labelledby="modal-content" aria-modal="true">
+            <button class="close">✖</button>
+            <div class="modal-body"></div>
+        </dialog>
+        
+    </main>
+    <footer>
+        <div class="title-container">
+            <p>Email: <a href="mailto:kindergarteninfo@comcast.net">kindergarteninfo@comcast.net</a></p>
+            <p>Phone: <a href="tel:+11234567890">(123) 456-7890</a></p>
+            <p>Address: 5601 SE 50th Ave, Portland, OR 97206</p>
+        </div>
+        <div class="google-map">
+            <iframe 
+                width="300" 
+                height="200" 
+                style="border:0;" 
+                loading="lazy" 
+                allowfullscreen 
+                referrerpolicy="no-referrer-when-downgrade" 
+                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDPRwjSrsnYhSsVQ4vV2tYaVNf_ne6FPi8&q=5601+SE+50th+Ave,+Portland,+OR+97206">
+            </iframe>
+        </div>
+        <div class="social-media">
+            <img src="images/youtube.webp" alt="youtube logo" width="100">
+            <img src="images/facebook.png" alt="facebook logo" width="100">
+            <img src="images/wechat.png" alt="wechat logo" width="100">
+        </div>
+        <p>&copy; <span id="currentYear"></span> August's Bilingual Kindergarten 颖颖的双语幼儿园</p>
+    </footer>
+    <script type="module" src="scripts/enroll.js"></script>
+</body>
+</html>
