@@ -28,6 +28,7 @@
             <a href="#enroll">Enroll</a>
         </nav>
     </header>
+    <h4>Here we go! We need your help to fill out the form below: </h4>
 
     <main>
         <form method="GET" action="thankyou.html" class="designOne">
@@ -49,6 +50,48 @@
             </fieldset>
             <label>Email <input type="email" name="email" required placeholder="john89@gmail.com"  title="Your Email" autocomplete="email"></label>
             <label>Cell Phone <input type="tel" name="phone"  autocomplete="tel" title="A Phone Number with dashes" placeholder="987-555-1234" ></label>
+            <!-- Program Checkboxes -->
+            <fieldset id="program-checkboxes">
+                <legend>Choose one program or more than one</legend>
+                <label>
+                    <input type="checkbox" name="program" value="preschool" required>
+                    Preschool
+                </label>
+                <label>
+                    <input type="checkbox" name="program" value="kindergarten">
+                    Kindergarten
+                </label>
+                <label>
+                    <input type="checkbox" name="program" value="after-school">
+                    After-school Activities
+                </label>
+            </fieldset>
+
+            <!-- Activity Radio Buttons -->
+
+            <fieldset id="activity-radios" style="display: none; margin-top: 10px;">
+                <legend>Choose an activity</legend>
+                <label>
+                    <input type="radio" name="activity" value="basketball">
+                    Basketball
+                </label>
+                <label>
+                    <input type="radio" name="activity" value="soccer">
+                    Soccer
+                </label>
+                <label>
+                    <input type="radio" name="activity" value="piano">
+                    Piano
+                </label>
+                <label>
+                    <input type="radio" name="activity" value="hip-hop dance basics">
+                    Hip-hop Dance Basics
+                </label>
+                <label>
+                    <input type="radio" name="activity" value="chinese calligraphy">
+                    Chinese Calligraphy
+                </label>
+            </fieldset>
 
             <label>Choose a term to start: </label> 
             <select name="term" required>
