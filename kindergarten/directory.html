@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>August's Kindergarten</title>
+    <meta name="description" content="Here you can find all you want to know about August's kindergarten">
+    <meta name="author" content="Ying Zhang">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles/kindergarten.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+    <style>
+        /* Header Styles with Hamburger Menu */
+        header, footer {
+            display: flex;
+            flex-flow: row wrap;
+            align-items: center;
+            justify-content: space-around;
+            padding: 20px;
+            background-color: var(--primary-color);
+            position: relative;
+            font-family: var(--heading-font);
+            font-size: large;
+            font-style: italic;
+            overflow: auto;
+        }
+
+        .title-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            flex-grow: 1;
+        }
+
+        header h1 {
+            font-family: var(--heading-font);
+            font-size: 1.5rem;
+            margin: 0;
+            color: var(--text-color);
+            text-align: center;
+
+        }
+
+        #menu {
+            font-size: 1.5rem;
+            border: 0;
+            background: none;
+            color: var(--text-color);
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+        }
+
+        #menu::before {
+            content: "☰";
+        }
+
+        #menu.open::before {
+            content: "❎";
+        }
+
+
+        .navigation {
+            display: flex;
+            flex-direction: column;
+            list-style: none;
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            font-weight: var(--font-weight);
+        }
+
+        .navigation a {
+            display: none;
+            padding: 1rem;
+            text-align: center;
+            text-decoration: none;
+            color: var(--text-color);
+        }
+        .navigation a:hover {
+            background-color: var(--text-color);
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+        h4 {
+            position: relative;
+            font-size: 1rem;
+            color: var(--text-color);
+            text-align: center;
+            padding: 16px 0;
+            margin: 10px 0;
+            background: linear-gradient(to right, #ffcc99, #ff6699, #ffcc99);
+            border-radius: 12px;
+            box-shadow: 10px 10px 20px rgba(255, 102, 153, 0.6);
+        }
+
+        h4::before,
+        h4::after {
+            content: '★';
+            position: absolute;
+            font-size: 1.5rem;
+            color: #fff;
+            animation: sparkle 1s infinite alternate;
+        }
+
+        h4::before {
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        h4::after {
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        @keyframes sparkle {
+            from {
+                opacity: 0.5;
+                transform: scale(1);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1.2);
+            }
+        }
+
+        #hero {
+            position: relative; 
+            width: 100%; 
+            max-width: 1000px; 
+            margin: 0 auto; 
+        }
+        #hero img {
+            width: 100%; 
+            height: auto; 
+            display: block; 
+        }
+        #hero button {
+            position: absolute;
+            top:50%;
+            left: 50%;
+            border: none;
+            border-radius: 10px;
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            padding: 10px;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+        #hero button:hover {
+            background-color: var(--text-color);
+            color: var(--primary-color);
+        }
+        .item-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #programs,
+        #events,
+        #current-weather,
+        #weather-forecast,
+        #pick-of-the-week {
+            padding: 20px;
+            margin: 10px;
+            background-color: var(--blue-color); 
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
+        }
+        #pick-of-the-week {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+        dialog {
+            position: fixed;
+            z-index: 1000;
+            padding: 20px;
+            border: none;
+            width: 80%;
+            max-width: 600px;
+            margin: auto;
+            border-radius: 8px;
+            background-color: whitesmoke;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 24px;
+            border: none;
+            background: none;
+            cursor: pointer;
+        }
+
+        .pick-image {
+            cursor: pointer;
+        }
+
+        .contact-info {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+        .google-map iframe {
+            border-radius: 8px;
+        }
+        .title-container a {
+            color: var(--text-color);
+            text-decoration: none; 
+        }
+    /* when the button is clicked - the open class is toggled (added/removed) */
+        .open a {
+            display: block;
+        }
+
+        .active::before { 
+            content: "📍";  /* just a wayfinding symbol for the user */
+        }
+        /* Navigation Styles for wider screens */
+        @media (min-width: 768px) {
+            #menu {
+                display: none; /* hide hamburger button */
+        }
+
+        .navigation {
+            flex-direction: row;
+        }
+        .navigation a {
+            display: block;
+            flex: 1 1 100%;
+        }
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 1rem;
+        }
+        .item-container {
+            flex-flow: row wrap;
+        }
+        #pick-of-the-week {
+            flex-flow: row rap;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="images/logo.webp" alt="logo" width="100" loading="lazy">
+        <div class="title-container">
+            <h1>August's Bilingual Kindergarten</h1>
+            <h1>颖颖的双语幼儿园</h1>
+        </div>
+        <button type="button" id="menu"></button>
+        
+        <nav class="navigation">
+            <a href="#about-us" class="active">About Us</a>
+            <a href="#discover">Discover</a>
+            <a href="#directory">Directory</a>
+            <a href="#enroll">Enroll</a>
+        </nav>
+    </header>
+
+    <main>
+        <h4>Below are our adorable and admirable teachers!</h4>    
+        <!-- Images Container -->
+        <div class="item-container"></div>
+        <dialog id="teacher-modal">
+            <button class="close">✖</button>
+            <div class="modal-body"></div>
+        </dialog>
+        <div class="title-container">
+            <h4>Welcome to August's bilingual Kindergarten! We nourish each child with love.</h4>
+            <h4>欢迎来到颖颖的双语幼儿园！ 我们用爱滋养每一个孩子。</h4>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="title-container">
+            <p>Email: <a href="mailto:kindergarteninfo@comcast.net">kindergarteninfo@comcast.net</a></p>
+            <p>Phone: <a href="tel:+11234567890">(123) 456-7890</a></p>
+            <p>Address: 5601 SE 50th Ave, Portland, OR 97206</p>
+        </div>
+        <div class="google-map">
+            <iframe 
+                width="300" 
+                height="200" 
+                style="border:0;" 
+                loading="lazy" 
+                allowfullscreen 
+                referrerpolicy="no-referrer-when-downgrade" 
+                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDPRwjSrsnYhSsVQ4vV2tYaVNf_ne6FPi8&q=5601+SE+50th+Ave,+Portland,+OR+97206">
+            </iframe>
+        </div>
+        <div class="social-media">
+            <img src="images/youtube.webp" alt="youtube logo" width="100">
+            <img src="images/facebook.png" alt="facebook logo" width="100">
+            <img src="images/wechat.png" alt="wechat logo" width="100">
+        </div>
+        <p>&copy; <span id="currentYear"></span> August's Bilingual Kindergarten 颖颖的双语幼儿园</p>
+    </footer>
+    <script type="module" src="scripts/directory.js"></script>
+</body>
+</html>
