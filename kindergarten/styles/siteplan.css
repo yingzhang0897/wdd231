@@ -6,10 +6,8 @@
     --pink-color: #ffb3c6;
     --text-color: #000000;
 
-    --heading-font: 'Playfair Display', serif;
-    --heading-font-style: italic;
+    --text-font: 'Playfair Display', serif;
     --paragraph-font: 'Playfair Display', serif;
-    --paragraph-font-style: normal;
     --title-font: 'Dancing Script', serif;
     --font-weight: 400;
 }
@@ -21,7 +19,7 @@ body {
     font-size: 18px;
     text-align: center;
     font-family: var(--paragraph-font);
-    font-style: var(--paragraph-font-style);
+    font-style: normal;
     font-weight: var(--font-weight);
     color: var(--text-color);
 }
@@ -33,8 +31,8 @@ img {
 }
 
 h2, h3, h4, h5, h6 {
-    font-family: var(--heading-font);
-    font-style: var(--heading-font-style);
+    font-family: var(--text-font);
+    font-style: italic;
     font-weight: var(--font-weight);
     color: var(--text-color);
     text-align: center;
