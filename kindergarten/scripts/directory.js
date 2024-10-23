@@ -2,6 +2,12 @@
 import { teachers } from './teachers.js';
 
 document.addEventListener('DOMContentLoaded', () => {
+    //hamButton
+    import ('./hambutton.js').then(module => {
+    const {hamButton} = module;
+    hamButton();
+    });
+    //teachers display
     const itemContainer = document.querySelector('.item-container');
     const modal = document.getElementById('teacher-modal');
     const modalBody = modal.querySelector('.modal-body');

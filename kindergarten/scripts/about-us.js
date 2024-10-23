@@ -1,15 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Non-import hamburger button functionality
-    const hamButton = document.querySelector('#menu');
-    const navigation = document.querySelector('.navigation');
-
-    if (hamButton && navigation) {
-        hamButton.addEventListener('click', () => {
-            navigation.classList.toggle('open');
-            hamButton.classList.toggle('open');
-        });
-    }
-
+    //hamButton
+    import ('./hambutton.js').then(module => {
+        const {hamButton} = module;
+        hamButton();
+    });
     // Events section
     import('./events.js').then(module => {
         const events = module.events;
