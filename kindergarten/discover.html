@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>August's Kindergarten</title>
+    <meta name="description" content="Here you can find all you want to know about August's kindergarten">
+    <meta name="author" content="Ying Zhang">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles/kindergarten.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+    <style>
+        aside {
+            width: 30%;
+            margin-left: 0;
+            float: left;
+            font-family: var(--text-font);
+            font-style: italic;
+            background-color: whitesmoke;
+            padding: 20px;
+            border: 2px solid var(--primary-color);
+            animation: spotlightGlow 2s infinite alternate;
+        }
+        @keyframes spotlightGlow {
+        0% {
+            box-shadow: 0 0 0px var(--pink-color);
+        }
+        50% {
+            box-shadow: 0 0 20px 10px var(--pink-color);
+        }
+        100% {
+            box-shadow: 0 0 0px var(--pink-color);
+        }
+}
+        aside h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        aside blockquote {
+            font-family: var(--paragraph-font);
+            font-style: italic;
+            margin: 20px 0;
+            padding: 5px;
+            background-color: whitesmoke;
+            border-left: 5px solid var(--text-color);
+            animation: fadeIn 3s forwards;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {   
+                opacity: 1;
+            }
+        }
+        aside blockquote:hover {
+            transform: scale(1.05);
+            overflow: auto;
+        }
+        aside cite {
+            display: block;
+            margin-top: 5px;
+            font-size: 0.9em;
+            color: #555;
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="images/logo.webp" alt="logo" width="100" loading="lazy">
+        <div class="title-container">
+            <h1>August's Bilingual Kindergarten</h1>
+            <h1>颖颖的双语幼儿园</h1>
+        </div>
+        <button type="button" id="menu"></button>
+        
+        <nav class="navigation">
+            <a href="#about-us" class="active">About Us</a>
+            <a href="#discover">Discover</a>
+            <a href="#directory">Directory</a>
+            <a href="#enroll">Enroll</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section id="bilingual-approach">
+            <h2>Our Bilingual Approach</h2>
+            <p>We believe that early exposure to a second language enhances children's cognitive abilities and broadens their cultural awareness. Our curriculum seamlessly integrates both languages throughout the day, helping children become comfortable and confident in a bilingual setting.</p>
+            <ul>
+                <li>Native-speaking teachers</li>
+                <li>Engaging language immersion activities</li>
+                <li>Interactive storytimes and cultural workshops</li>
+            </ul>
+        </section>
+        <aside>
+            <h2>Parent Testimonials</h2>
+            <blockquote>
+                <p>"Our child loves coming to August's Bilingual Kindergarten every day! The bilingual environment has made learning so much more fun, and the teachers are fantastic!"</p>
+                <cite>– Sarah J., Parent</cite>
+            </blockquote>
+            <blockquote>
+                <p>"We are thrilled with the progress our daughter has made in both languages. The immersive program is well-designed and the staff is so supportive."</p>
+                <cite>– Mark L., Parent</cite>
+            </blockquote>
+        </aside>
+
+
+        <section id="facilities">
+            <h2>Facilities</h2>
+            <p>Our facilities are designed to create a safe, stimulating, and fun learning environment for children. We offer:</p>
+            <div class="facilities-grid">
+                <div class="facility-item">
+                    <img src="images/classroom.jpg" alt="Bright Classroom">
+                    <h3>Bright Classrooms</h3>
+                    <p>Our classrooms are colorful, spacious, and equipped with materials that support bilingual learning.</p>
+                </div>
+                <div class="facility-item">
+                    <img src="images/playground.jpg" alt="Playground">
+                    <h3>Outdoor Play Area</h3>
+                    <p>A large, safe playground where children can enjoy physical activities and outdoor games.</p>
+                </div>
+                <div class="facility-item">
+                    <img src="images/library.jpg" alt="Library">
+                    <h3>Library</h3>
+                    <p>A bilingual library with a diverse collection of books to foster a love for reading in two languages.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="programs">
+            <h2>Programs & Activities</h2>
+            <p>Our kindergarten offers various programs tailored to children's developmental stages:</p>
+            <ul>
+                <li><strong>Language Immersion:</strong> Full immersion programs that include songs, stories, and interactive games in both languages.</li>
+                <li><strong>Creative Arts:</strong> Art, music, and dance classes that encourage creative expression and cultural exploration.</li>
+                <li><strong>STEM Learning:</strong> Hands-on activities that introduce basic concepts in science, technology, engineering, and math.</li>
+            </ul>
+        </section>
+
+
+    </main>
+    
+    <footer>
+        <div class="title-container">
+            <p>Email: <a href="mailto:kindergarteninfo@comcast.net">kindergarteninfo@comcast.net</a></p>
+            <p>Phone: <a href="tel:+11234567890">(123) 456-7890</a></p>
+            <p>Address: 5601 SE 50th Ave, Portland, OR 97206</p>
+        </div>
+        <div class="google-map">
+            <iframe 
+                width="300" 
+                height="200" 
+                style="border:0;" 
+                loading="lazy" 
+                allowfullscreen 
+                referrerpolicy="no-referrer-when-downgrade" 
+                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDPRwjSrsnYhSsVQ4vV2tYaVNf_ne6FPi8&q=5601+SE+50th+Ave,+Portland,+OR+97206">
+            </iframe>
+        </div>
+        <div class="social-media">
+            <img src="images/youtube.webp" alt="youtube logo" width="100">
+            <img src="images/facebook.png" alt="facebook logo" width="100">
+            <img src="images/wechat.png" alt="wechat logo" width="100">
+        </div>
+        <p>&copy; <span id="currentYear"></span> August's Bilingual Kindergarten 颖颖的双语幼儿园</p>
+    </footer>
+</body>
+</html>
