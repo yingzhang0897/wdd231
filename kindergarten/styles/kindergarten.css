@@ -89,7 +89,7 @@ h4 {
     font-size: 1rem;
     color: var(--text-color);
     text-align: center;
-    padding: 16px 0;
+    padding: 16px 16px;
     margin: 10px 0;
     background: linear-gradient(to right, #ffcc99, #ff6699, #ffcc99);
     border-radius: 12px;
@@ -173,6 +173,13 @@ dialog {
     content: "📍";  /* just a wayfinding symbol for the user */
 }
 
+.item-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: space-evenly;
+    align-items: center;
+}
 
 /*home page*/
 #hero {
@@ -202,13 +209,6 @@ dialog {
     background-color: var(--text-color);
     color: var(--primary-color);
 }
-.item-container {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    justify-content: center;
-    align-items: center;
-}
 
 #programs,
 #events,
@@ -224,12 +224,38 @@ dialog {
 #pick-of-the-week {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    border: var(--text-color);
+    justify-content: space-between;
+    animation: spotlightGlow 2s infinite alternate;
 }
-.pick-image {
+@keyframes spotlightGlow {
+    0% {
+        box-shadow: 0 0 0px var(--pink-color);
+    }
+    50% {
+        box-shadow: 0 0 20px 10px var(--pink-color);
+    }
+    100% {
+        box-shadow: 0 0 0px var(--pink-color);
+    }
+}
+.pick-image, .teacher-image{
     cursor: pointer;
+    margin: 20px 20px;
+    animation: fadeIn 3s forwards;
 }
-
+.pick-image:hover, .teacher-image:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 4px 8px var(--primary-color); 
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {   
+        opacity: 1;
+    }
+}
 /*join page*/
 main {
     display: flex;
