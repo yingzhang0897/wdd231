@@ -252,13 +252,6 @@ dialog {
         opacity: 1;
     }
 }
-/*join page*/
-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-}
 
 form {
     background-color: #fff;
@@ -375,7 +368,7 @@ fieldset label input[type="radio"] {
 .program-card button:hover, .term-card button:hover {
     background-color: var(--pink-color);
 }
-/*thankyou page*/
+/*join page and thankyou page*/
 main {
     display: flex;
     flex-direction: column;
