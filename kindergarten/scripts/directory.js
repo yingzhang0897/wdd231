@@ -60,5 +60,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Display teachers on page load
     displayTeachers();
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
 });
 
