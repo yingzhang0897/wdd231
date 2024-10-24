@@ -5,6 +5,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const {hamButton} = module;
         hamButton();
     });
+    //wayfinding in nav
+    import ('./setActiveNav.js').then(module => {
+        const {setActiveNav} = module;
+        setActiveNav();
+    })
 
     // Initialize program and term cards
     displayProgramCard();

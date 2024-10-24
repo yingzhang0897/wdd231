@@ -4,6 +4,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const {hamButton} = module;
         hamButton();
     });
+    //wayfinding in nav
+    import ('./setActiveNav.js').then(module => {
+        const {setActiveNav} = module;
+        setActiveNav();
+    })
     // Events section
     import('./events.js').then(module => {
         const events = module.events;

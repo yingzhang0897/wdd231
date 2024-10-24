@@ -1,12 +1,14 @@
 // Import the kids array (if using a module system)
 import { kids, createKidCards, searchKidByName } from './kids.js';
 import { hamButton } from './hambutton.js';
+import { setActiveNav } from './setActiveNav.js';
 import { displayVisitMessage } from './message.js';
 
 // Function to create and display cards for each kid
 // Call the functions to set up the page
 document.addEventListener('DOMContentLoaded', () => {
   hamButton(); // Initialize the hamburger button
+  setActiveNav();//wayfinding in nav
   displayVisitMessage(); // Call the function to display visit message
   createKidCards(); // Display kids cards
   searchKidByName();//search for a kid by name
