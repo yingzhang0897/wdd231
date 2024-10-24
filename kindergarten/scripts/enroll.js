@@ -1,5 +1,10 @@
 import { programLevels, terms } from './program-term.js';
-import { hamButton } from './hambutton.js';
+document.addEventListener('DOMContentLoaded', () => {
+    //hamButton
+    import ('./hambutton.js').then(module => {
+        const {hamButton} = module;
+        hamButton();
+    });
 
     // Initialize program and term cards
     displayProgramCard();
