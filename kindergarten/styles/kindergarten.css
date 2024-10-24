@@ -74,6 +74,9 @@ header h1 {
     text-decoration: none;
     color: var(--text-color);
 }
+.active::before { 
+	content: "📍";  /* just a wayfinding symbol for the user */
+}
 .navigation a:hover {
     background-color: var(--text-color);
     color: var(--primary-color);
