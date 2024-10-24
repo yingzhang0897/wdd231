@@ -415,15 +415,6 @@ main {
         align-items: flex-start;
         justify-content: space-around;
     }
-    /*thankyou page*/
-    
-    main {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-evenly;
-    }
-
     
 
 }
