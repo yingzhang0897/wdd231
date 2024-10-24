@@ -165,10 +165,6 @@ dialog {
     display: block;
 }
 
-.active::before { 
-    content: "📍";  /* just a wayfinding symbol for the user */
-}
-
 .item-container {
     display: flex;
     flex-direction: column;
@@ -235,12 +231,12 @@ dialog {
         box-shadow: 0 0 0px var(--pink-color);
     }
 }
-.pick-image, .teacher-image{
+.pick-image, .teacher-image, .kid-card{
     cursor: pointer;
     margin: 20px 20px;
     animation: fadeIn 3s forwards;
 }
-.pick-image:hover, .teacher-image:hover {
+.pick-image:hover, .teacher-image:hover, .kid-card:hover {
     transform: scale(1.1);
     box-shadow: 0 0 4px 8px var(--primary-color); 
 }
@@ -252,9 +248,74 @@ dialog {
         opacity: 1;
     }
 }
+/*discover page*/
+.testimonials {
+    width: 60%;
+    margin: 20px auto;
+    font-family: var(--text-font);
+    font-style: italic;
+    background-color: whitesmoke;
+    padding: 20px;
+    border: 2px solid var(--primary-color);
+    animation: spotlightGlow 2s infinite alternate;
+}
+.testimonials h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
 
+.testimonials blockquote {
+    font-family: var(--paragraph-font);
+    font-style: italic;
+    margin: 20px 0;
+    padding: 5px;
+    background-color: whitesmoke;
+    border-left: 5px solid var(--text-color);
+    animation: fadeIn 3s forwards;
+}
+.testimonials blockquote:hover {
+    transform: scale(1.05);
+    overflow: auto;
+}
+.testimonials cite {
+    display: block;
+    margin-top: 5px;
+    font-size: 0.9em;
+    color: var(--text-color);
+}
+.search-container {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    max-width: 400px;
+    width: 100%;
+}
+
+.search-icon {
+    font-size: 30px;
+    color: var(--text-color);
+    margin-right: 10px;
+}
+
+#searchKidInput {
+    padding: 10px;
+    width: 100%;
+    font-size: 16px;
+    border: 1px solid var(--text-color);
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px 10px var(--pink-color);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#searchKidInput:focus {
+    border-color: var(--text-color);
+    box-shadow: 2px 2px 10px 10px var(--primary-color);
+    outline: none;
+}
+
+/*enroll page*/
 form {
-    background-color: #fff;
+    background-color: whitesmoke;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
