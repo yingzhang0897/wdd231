@@ -2,70 +2,84 @@ export const kids = [
     {
         name: "Isaac",
         age: 3,
+        program: "preschool",
         img: "images/kids/Isaac-3.webp"
     },
     {
         name: "Isaac",
         age: 4,
+        program: "preschool",
         img: "images/kids/Isaac-4.webp"
     },
     {
         name: "Isaac",
         age: 5,
+        program: "kindergarten",
         img: "images/kids/Isaac-5.webp"
     },
     {
         name: "Isaac",
         age: 6,
+        program: "kindergarten",
         img: "images/kids/Isaac-6.webp"
     },
     {
         name: "Rhelina",
         age: 3,
+        program: "preschool",
         img: "images/kids/Rhelina-3.webp"
     },
     {
         name: "Rhelina",
         age: 4,
+        program: "preschool",
         img: "images/kids/Rhelina-4.webp"
     },
     {
         name: "Rhelina",
         age: 5,
+        program: "kindergarten",
         img: "images/kids/Rhelina-5.webp"
     },
     {
         name: "Rhelina",
         age: 6,
+        program: "kindergarten",
         img: "images/kids/Rhelina-6.webp"
     },
     {
         name: "Luke",
         age: 3,
+        program: "preschool",
         img: "images/kids/Luke-3.webp"
     },
     {
         name: "Luke",
         age: 4,
+        program: "preschool",
         img: "images/kids/Luke-4.webp"
     },
     {
         name: "Luke",
         age: 5,
+        program: "kindergarten",
         img: "images/kids/Luke-5.webp"
     },
     {
         name: "Luke",
         age: 6,
+        program: "kindergarten",
         img: "images/kids/Luke-6.webp"
     },
     {
         name: "Luke",
         age: 7,
+        program: "after-school activity",
         img: "images/kids/Luke-7.webp"
     }
 ];
-export function createKidCards() {
+
+export function createKidCards(filteredKids = kids) {
     // Get the container element
     const container = document.querySelector('.item-container');
   
@@ -73,7 +87,7 @@ export function createKidCards() {
     container.innerHTML = '';
   
     // Iterate over the kids array
-    kids.forEach(kid => {
+    filteredKids.forEach(kid => {
       // Create a card element for each kid
       const card = document.createElement('div');
       card.classList.add('kid-card');
@@ -101,6 +115,7 @@ export function createKidCards() {
       container.appendChild(card);
     });
 }
+
 export function searchKidByName() {
     // Create a container for the search input and icon
     const searchContainer = document.createElement('div');
@@ -131,33 +146,56 @@ export function searchKidByName() {
       // Filter kids based on the search input
       const filteredKids = kids.filter(kid => kid.name.toLowerCase().includes(searchValue));
   
-      // Clear the existing container content
-      container.innerHTML = '';
-  
       // Display the filtered kids
-      filteredKids.forEach(kid => {
-        const card = document.createElement('div');
-        card.classList.add('kid-card');
-  
-        const img = document.createElement('img');
-        img.src = kid.img;
-        img.alt = `${kid.name}, Age ${kid.age}`;
-        img.height = 300;
-  
-        const name = document.createElement('h3');
-        name.textContent = kid.name;
-  
-        const age = document.createElement('p');
-        age.textContent = `Age: ${kid.age}`;
-  
-        card.appendChild(img);
-        card.appendChild(name);
-        card.appendChild(age);
-  
-        container.appendChild(card);
-      });
+      createKidCards(filteredKids);
     });
 }
-  
-  
-    
+
+export function filterByProgram() {
+    // Create a container for the program filter dropdown
+    const filterContainer = document.createElement('div');
+    filterContainer.classList.add('filter-container');
+
+    // Create a label for the filter
+    const filterLabel = document.createElement('label');
+    filterLabel.for = 'programFilter';
+    filterLabel.textContent = 'Filter by Program: ';
+
+    // Create a select element for filtering
+    const programFilter = document.createElement('select');
+    programFilter.id = 'programFilter';
+
+    // Create options for the select element
+    const programs = ['All', 'preschool', 'kindergarten', 'after-school activity'];
+    programs.forEach(program => {
+        const option = document.createElement('option');
+        option.value = program;
+        option.textContent = program;
+        programFilter.appendChild(option);
+    });
+
+    // Append the label and select to the filter container
+    filterContainer.appendChild(filterLabel);
+    filterContainer.appendChild(programFilter);
+
+    // Insert the filter container before the container element
+    const container = document.querySelector('.item-container');
+    container.parentNode.insertBefore(filterContainer, container);
+
+    // Add event listener to the select element
+    programFilter.addEventListener('change', () => {
+        const selectedProgram = programFilter.value;
+
+        // Filter kids based on the selected program
+        const filteredKids = selectedProgram === 'All' ? kids : kids.filter(kid => kid.program === selectedProgram);
+
+        // Display the filtered kids
+        createKidCards(filteredKids);
+    });
+}
+// call these functions on page load
+document.addEventListener('DOMContentLoaded', () => {
+    createKidCards();
+    searchKidByName();
+    filterByProgram();
+});
