@@ -15,12 +15,12 @@
 // }
 export function setActiveNav() {
     const navLinks = document.querySelectorAll('.nav-link');
-    const currentPage = window.location.pathname;
+    const currentPage = window.location.pathname.split('/').pop(); // Extract just the filename
 
     console.log('Current Page:', currentPage); // Log current page
 
     navLinks.forEach(link => {
-        const linkPath = link.getAttribute('href');
+        const linkPath = link.getAttribute('href').split('/').pop(); // Extract just the filename
         console.log('Checking link:', linkPath); // Log each link being checked
 
         if (linkPath === currentPage) {
