@@ -5,10 +5,12 @@ document.addEventListener('DOMContentLoaded', () => {
         hamButton();
     });
     //wayfinding in nav
-    import ('./setActiveNav.js').then(module => {
-        const {setActiveNav} = module;
+    import('./setActiveNav.js').then(module => {
+        const { setActiveNav } = module;
         setActiveNav();
-    })
+    }).catch(error => {
+        console.error('Error loading setActiveNav module:', error);
+    });
     // Events section
     import('./events.js').then(module => {
         const events = module.events;
