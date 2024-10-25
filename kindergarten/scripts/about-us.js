@@ -76,5 +76,12 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     });
+
+    //add message in the footer
+    import('./message.js').then(module => {
+        const { displayVisitMessage } = module;
+        displayVisitMessage();
+    });
+    //get year in the footer
     document.getElementById('currentYear').textContent = new Date().getFullYear();
 });
