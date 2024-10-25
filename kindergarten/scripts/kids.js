@@ -117,6 +117,8 @@ export function createKidCards(filteredKids = kids) {
 }
 
 export function searchKidByName() {
+    //Check if the search container already exists
+    if (document.querySelector('.search-container')) return;
     // Create a container for the search input and icon
     const searchContainer = document.createElement('div');
     searchContainer.classList.add('search-container');
