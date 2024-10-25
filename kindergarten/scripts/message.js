@@ -8,7 +8,7 @@ export function displayVisitMessage() {
     
     const messageArea = document.createElement("section");
     messageArea.classList.add("visit-message");
-    const sidebar = document.querySelector(".sidebar");
+    const footer = document.querySelector("footer");
     
     // Check if the user has visited before
     if (lastVisit) {
@@ -28,8 +28,8 @@ export function displayVisitMessage() {
     // Store the current date as the last visit date
     localStorage.setItem("lastVisit", currentDate);
     
-    // Append the message area to the sidebar
-    if (sidebar) {
-        sidebar.appendChild(messageArea);
+    // Append the message area to the footer
+    if (footer) {
+        footer.appendChild(messageArea);
     }
 }
