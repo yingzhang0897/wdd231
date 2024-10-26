@@ -106,6 +106,7 @@
 
             <label>Choose a term to start: </label> 
             <select name="term" required>
+                <option value="" disabled selected>Select a term</option>
                 <option value="winter term">winter term (14 weeks)</option>
                 <option value="spring term">spring term (14 weeks)</option>
                 <option value="summer term">summer term (5 weeks)</option>
@@ -118,12 +119,12 @@
             <input type="submit" value="Enroll">
         </form>
         <div id="program-card" tabindex="0"></div>
-        <dialog id="program-modal" aria-labelledby="modal-content" aria-modal="true">
+        <dialog id="program-modal" aria-modal="true">
             <button class="close">✖</button>
             <div class="modal-body"></div>
         </dialog>
         <div id="term-card" tabindex="0"></div>
-        <dialog id="term-modal" aria-labelledby="modal-content" aria-modal="true">
+        <dialog id="term-modal"  aria-modal="true">
             <button class="close">✖</button>
             <div class="modal-body"></div>
         </dialog>

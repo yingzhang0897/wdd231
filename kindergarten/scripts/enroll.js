@@ -66,12 +66,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Update the modal content with program details
         modalContent.innerHTML = `
-            <h2>${levelInfo.name}</h2>
+            <h2 id="program-modal-title">${levelInfo.name}</h2>
             <p><strong>Age Group:</strong> ${levelInfo.ageGroup}</p>
             <p>${levelInfo.description}</p>
         `;
-
+        // Set aria-labelledby to the modal title to improve screen reader accessibility
+        modal.setAttribute('aria-labelledby', 'program-modal-title');
         modal.showModal();
+        // Set focus to the modal for accessibility
+        modal.focus();
     };
 
     // Function to show term details in the term modal
@@ -83,13 +86,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Update the modal content with term details
         modalContent.innerHTML = `
-            <h2>${termInfo.name}</h2>
+            <h2 id="term-modal-title"> ${termInfo.name}</h2>
             <p><strong>Duration:</strong> ${termInfo.duration}</p>
             <p><strong>Tuition:</strong> ${termInfo.tuition}</p>
             <p><strong>Dates:</strong> ${termInfo.date}</p>
         `;
-
+        // Set aria-labelledby to the modal title to improve screen reader accessibility
+        modal.setAttribute('aria-labelledby', 'term-modal-title');
         modal.showModal();
+        // Set focus to the modal for accessibility
+        modal.focus();
+
     };
 
     // Add close functionality to both modals
