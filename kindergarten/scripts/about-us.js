@@ -62,7 +62,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
     
                 // Append the image element to the pickSection
-                pickSection.appendChild(h4);
                 pickSection.appendChild(imgElement);
             });
     
