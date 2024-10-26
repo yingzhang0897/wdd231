@@ -219,7 +219,7 @@ dialog {
 }
 #pick-of-the-week {
     display: flex;
-    flex-direction: row;
+    flex-flow: row wrap;
     border: var(--text-color);
     justify-content: space-between;
     animation: spotlightGlow 2s infinite alternate;
