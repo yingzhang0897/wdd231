@@ -126,6 +126,25 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Add event listener to the form for validation
+    const form = document.getElementById('enrollment-form');
+    form.addEventListener('submit', (event) => {
+        if (!validateProgramSelection()) {
+            event.preventDefault(); // Prevent form submission
+        }
+    });
+    //make the program selection required 
+    function validateProgramSelection() {
+        const checkboxes = document.querySelectorAll('input[name="program"]');
+        const isChecked = Array.from(checkboxes).some(checkbox => checkbox.checked);
+        
+        if (!isChecked) {
+            alert("Please select at least one program.");
+            return false; // Prevent form submission
+        }
+        return true; // Allow form submission
+    }
     //date in the footer
     document.getElementById('currentYear').textContent = new Date().getFullYear();
 });
