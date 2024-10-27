@@ -29,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
             imgElement.src = teacher.img;
             imgElement.alt = teacher.name;
             imgElement.height = 300;
+            imgElement.loading = "lazy"; 
             imgElement.classList.add('teacher-image');
             
             // Add event listener to open modal on image click

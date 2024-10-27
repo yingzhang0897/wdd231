@@ -97,6 +97,7 @@ export function createKidCards(filteredKids = kids) {
       img.src = kid.img;
       img.alt = `${kid.name}, Age ${kid.age}`;
       img.height = 300;
+      img.loading = "lazy";
   
       // Create a name element
       const name = document.createElement('h3');
