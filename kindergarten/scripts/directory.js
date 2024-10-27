@@ -21,11 +21,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to render teacher images in the container
     function displayTeachers() {
+        // Clear the container before appending new elements
+        itemContainer.innerHTML = '';
         teachers.forEach(teacher => {
             // Create an image element for each teacher
             const imgElement = document.createElement('img');
             imgElement.src = teacher.img;
             imgElement.alt = teacher.name;
+            imgElement.height = 300;
             imgElement.classList.add('teacher-image');
             
             // Add event listener to open modal on image click
