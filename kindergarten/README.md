@@ -1,2 +1,2 @@
 # kindergarten video
-https://github.com/user-attachments/assets/d4d6c258-2460-4be0-bf7d-7b677b8b0ade
+https://www.loom.com/share/d627d4bc72794225b910b86eb04060c6?sid=556f2888-7ffc-4912-ae35-495f250ad51b
